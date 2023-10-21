@@ -33,18 +33,6 @@
   </div>
 </nav>
 
-<!-- <div class="topnav justify-content-center mx-auto" id="myTopnav">
-
-<div *ngFor="let link of links" class="contenedor">
-
-  <a [routerLink]="link.link"
-  routerLinkActive="active" href="#home" >
-  <span class="material-symbols-outlined">
-    {{link.icon}}
-    </span>{{ link.name }}</a>
-</div>
-</div> -->
-
 <nav class="menu navbar navbar-expand-lg">
   <div class="container-fluid">
     <button
@@ -57,7 +45,8 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <div class="navbar-nav contenedor" *ngFor="let link of links">
-        <a
+        <a [routerLink]="link.link"
+        routerLinkActive="active"
 
           class="nav-item nav-link"
           ><span class="material-symbols-outlined">
@@ -71,5 +60,4 @@
 </nav>
 
 
-<!-- [routerLink]="link.link"
-          routerLinkActive="active" -->
+

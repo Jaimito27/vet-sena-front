@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Navigation } from '../../interfaces/nav.interface';
 
 @Component({
@@ -6,15 +6,14 @@ import { Navigation } from '../../interfaces/nav.interface';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
 
   constructor() { }
   links: Navigation[]=[
-    {link: 'countries/by-capital', icon: 'keyboard_capslock_badge', name: 'Capital'},
-    {link: 'countries/by-country', icon: 'flag', name: 'Pais'},
-    {link: 'countries/by-region', icon: 'screenshot_region', name: 'Region'},
+    {link: 'home', icon: 'home', name: 'Inicio'},
+    {link: 'contacto', icon: 'contact_support', name: 'Contactanos'},
+    {link: 'servicios', icon: 'design_services', name: 'Servicios'},
     ]
-  ngOnInit() {
-  }
+
 
 }

@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
@@ -13,7 +15,7 @@ import { ContactComponent } from './pages/contact/contact.component';
     HomePageComponent,
     OurServicesComponent,
     ContactComponent],
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   exports: [
     HeaderComponent,
     FooterComponent,
