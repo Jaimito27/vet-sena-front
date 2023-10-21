@@ -1,0 +1,14 @@
+.y-card-header {
+  order: 1;
+  padding-top: 0.5rem;
+}
+.y-card-body {
+  order: 2;
+  min-height: calc(100vh);
+  margin-top: 1rem;
+}
+.y-card-footer {
+  order: 3;
+  position: relative;
+  width: 100%;
+}
