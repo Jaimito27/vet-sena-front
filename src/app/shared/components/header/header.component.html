@@ -58,8 +58,7 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <div class="navbar-nav contenedor" *ngFor="let link of links">
         <a
-          [routerLink]="link.link"
-          routerLinkActive="active"
+
           class="nav-item nav-link"
           ><span class="material-symbols-outlined">
             {{ link.icon }}
@@ -70,3 +69,7 @@
     </div>
   </div>
 </nav>
+
+
+<!-- [routerLink]="link.link"
+          routerLinkActive="active" -->

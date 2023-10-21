@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Navigation } from '../interfaces/nav.interface';
+import { Navigation } from '../../interfaces/nav.interface';
 
 @Component({
   selector: 'app-header',
