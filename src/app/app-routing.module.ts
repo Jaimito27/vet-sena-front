@@ -17,6 +17,10 @@ const routes: Routes = [
     path: 'servicios',
     component: OurServicesComponent,
   },
+  {
+    path: '**',
+    redirectTo: 'home'
+  }
 
 ];
 

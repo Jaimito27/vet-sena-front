@@ -1,32 +1,8 @@
-<!-- <link
+ <link
   rel="stylesheet"
   href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
-/> -->
+/>
 
-  <!-- <div class="container-fluid">
-    <button
-      type="button"
-      class="navbar-toggler"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarCollapse"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-      <div class="navbar-nav contenedor" *ngFor="let link of links">
-        <a [routerLink]="link.link"
-        routerLinkActive="active"
-
-          class="nav-item nav-link"
-          ><span class="material-symbols-outlined">
-            {{ link.icon }}
-          </span>
-          {{ link.name }}</a
-        >
-      </div>
-    </div>
-  </div>
-</nav> -->
 
     <!-- Navbar -->
 <div class="page">
@@ -42,12 +18,20 @@
             <div class="offcanvas-body">
                 <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
                     <li class="nav-item" *ngFor="let link of links">
-                        <a [routerLink]="link.link" routerLinkActive="active" class="nav-link mx-lg-2" aria-current="page">{{link.label}}</a>
+                        <a [routerLink]="link.link" routerLinkActive="active" class="nav-link mx-lg-2" aria-current="page">
+                          <span class="material-symbols-outlined align-text-top">
+                           {{link.icon}}
+                            </span>
+                          {{link.label}}</a>
                     </li>
                 </ul>
             </div>
         </div>
-        <a href="#" class="login-button">Login</a>
+        <a href="#" class="login-button" *ngIf="logueo == false else usuario">Login</a>
+        <ng-template #usuario>
+          <a href="#" class="login-button">Logout</a>
+        </ng-template>
+
         <button class="navbar-toggler pe-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
             aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
