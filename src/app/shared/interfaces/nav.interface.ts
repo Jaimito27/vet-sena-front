@@ -1,5 +1,5 @@
 export interface Navigation{
   link: string;
   icon: string;
-  name: string;
+  label: string;
 }

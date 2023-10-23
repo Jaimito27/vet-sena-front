@@ -1,40 +1,9 @@
-<link
+<!-- <link
   rel="stylesheet"
   href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
-/>
+/> -->
 
-<nav class="line navbar navbar-expand-lg">
-  <div class="container-fluid">
-    <a href="#" class="navbar-brand">Vete</a>
-    <button
-      type="button"
-      class="navbar-toggler"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarCollapse"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-      <div class="navbar-nav ms-auto">
-        <section class="buttons">
-          <button class="btn">
-            <span class="material-symbols-outlined"> how_to_reg </span>Iniciar
-            sesion
-          </button>
-        </section>
-        <section class="buttons">
-          <button class="btn">
-            <span class="material-symbols-outlined"> person_add </span
-            >Registrarse
-          </button>
-        </section>
-      </div>
-    </div>
-  </div>
-</nav>
-
-<nav class="menu navbar navbar-expand-lg">
-  <div class="container-fluid">
+  <!-- <div class="container-fluid">
     <button
       type="button"
       class="navbar-toggler"
@@ -57,7 +26,33 @@
       </div>
     </div>
   </div>
+</nav> -->
+
+    <!-- Navbar -->
+<div class="page">
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+        <a class="navbar-brand me-auto" href="#">Logo</a>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Logo</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+                    <li class="nav-item" *ngFor="let link of links">
+                        <a [routerLink]="link.link" routerLinkActive="active" class="nav-link mx-lg-2" aria-current="page">{{link.label}}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <a href="#" class="login-button">Login</a>
+        <button class="navbar-toggler pe-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
 </nav>
-
-
+</div>
 

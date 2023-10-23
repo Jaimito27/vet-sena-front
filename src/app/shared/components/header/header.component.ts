@@ -10,9 +10,9 @@ export class HeaderComponent {
 
   constructor() { }
   links: Navigation[]=[
-    {link: 'home', icon: 'home', name: 'Inicio'},
-    {link: 'contacto', icon: 'contact_support', name: 'Contactanos'},
-    {link: 'servicios', icon: 'design_services', name: 'Servicios'},
+    {link: 'home', icon: 'home', label: 'Inicio'},
+    {link: 'contacto', icon: 'contact_support', label: 'Contactanos'},
+    {link: 'servicios', icon: 'design_services', label: 'Servicios'},
     ]
 
 

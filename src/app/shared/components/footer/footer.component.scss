@@ -1,3 +1,19 @@
+@import '../../../../styles.scss';
+
 footer{
-  background-color: red;
+  background-color: $colorFooter;
+}
+a{
+  color: white;
+  text-decoration: none;
+  :hover{
+    color: black;
+  }
+}
+svg{
+  width: 16px;
+  height: 16px;
+}
+p{
+  color: white;
 }
