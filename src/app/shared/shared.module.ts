@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { GetIntoModule } from '../get-into/get-into.module';
 
-
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -17,14 +17,15 @@ import { ContactComponent } from './pages/contact/contact.component';
     FooterComponent,
     HomePageComponent,
     OurServicesComponent,
-    ContactComponent],
-  imports: [CommonModule, RouterModule, GetIntoModule],
+    ContactComponent,
+  ],
+  imports: [CommonModule, RouterModule, GetIntoModule, MatDialogModule],
   exports: [
     HeaderComponent,
     FooterComponent,
     HomePageComponent,
     OurServicesComponent,
-    ContactComponent
-  ]
+    ContactComponent,
+  ],
 })
 export class SharedModule {}

@@ -27,11 +27,11 @@
                 </ul>
             </div>
         </div>
-        <button href="#" class="login-button" *ngIf="!auth; else usuario"><span class="material-symbols-outlined align-text-top pe-1 fs-5">
+        <button (click)="openDialog()" class="login-button" *ngIf="!auth; else usuario"><span class="material-symbols-outlined align-text-top pe-1 fs-5">
           login
           </span>Login</button>
         <ng-template #usuario>
-          <button href="#" class="login-button"><span class="material-symbols-outlined align-text-top pe-1 fs-5">
+          <button class="login-button"><span class="material-symbols-outlined align-text-top pe-1 fs-5">
             logout
             </span>Logout</button>
         </ng-template>
@@ -43,4 +43,3 @@
     </div>
 </nav>
 </div>
-

@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { Navigation } from '../../interfaces/nav.interface';
 
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { LoginComponent } from 'src/app/get-into/pages/login/login.component';
+
 
 @Component({
   selector: 'shared-app-header',
@@ -9,14 +12,22 @@ import { Navigation } from '../../interfaces/nav.interface';
 })
 export class HeaderComponent {
 
-
-  auth: boolean = false;
-  constructor() { }
   links: Navigation[]=[
     {link: 'home', icon: 'home', label: 'Inicio'},
     {link: 'contacto', icon: 'contact_support', label: 'Contactanos'},
     {link: 'servicios', icon: 'design_services', label: 'Servicios'},
     ]
 
+  auth: boolean = false;
 
-}
+  constructor(private dialogRef: MatDialog,) { }
+
+  openDialog(): void {
+     const dialogRef: MatDialogRef<LoginComponent> = this.dialogRef.open(LoginComponent, {
+      width: '25%',
+      disableClose: true,
+
+    });
+
+
+}}

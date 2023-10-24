@@ -1,4 +1,7 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Nerko+One&display=swap');
+
+
 $colorFondo:#EEEEEE;
 $colorNavbar: #053B50;
 $colorBtnNavbar: #64CCC5;
@@ -8,6 +11,13 @@ $colorFooter: #176B87;
 
 .cuerpo{
   background-color: $colorFondo;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+h1{
+font-family: 'Nerko One', cursive !important;
+font-size: 3rem !important;
 }
 
 
@@ -45,6 +55,3 @@ $colorFooter: #176B87;
   --bs-btn-disabled-bg: #ff2323; /* Cambiar el color de fondo en estado deshabilitado */
   --bs-btn-disabled-border-color: #ff2323;
 }
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
