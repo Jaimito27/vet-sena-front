@@ -17,10 +17,15 @@ const routes: Routes = [
     path: 'servicios',
     component: OurServicesComponent,
   },
+    {
+    path: 'login',
+    loadChildren: () => import ('./get-into/get-into.module').then(m => m.GetIntoModule)
+  },
   {
     path: '**',
     redirectTo: 'home'
-  }
+  },
+
 
 ];
 
