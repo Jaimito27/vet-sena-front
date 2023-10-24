@@ -27,9 +27,13 @@
                 </ul>
             </div>
         </div>
-        <a href="#" class="login-button" *ngIf="logueo == false else usuario">Login</a>
+        <button href="#" class="login-button" *ngIf="!auth; else usuario"><span class="material-symbols-outlined align-text-top pe-1 fs-5">
+          login
+          </span>Login</button>
         <ng-template #usuario>
-          <a href="#" class="login-button">Logout</a>
+          <button href="#" class="login-button"><span class="material-symbols-outlined align-text-top pe-1 fs-5">
+            logout
+            </span>Logout</button>
         </ng-template>
 
         <button class="navbar-toggler pe-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"

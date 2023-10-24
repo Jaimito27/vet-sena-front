@@ -9,7 +9,7 @@ import { Navigation } from '../../interfaces/nav.interface';
 export class HeaderComponent {
 
 
-  logueo: boolean = false;
+  auth: boolean = false;
   constructor() { }
   links: Navigation[]=[
     {link: 'home', icon: 'home', label: 'Inicio'},

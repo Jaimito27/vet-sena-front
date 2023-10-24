@@ -1,1 +1,19 @@
-<p>our-services works!</p>
+<h1 class="text-center">Nuestros servicios</h1>
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-4" *ngFor="let prueba of pruebas">
+      <div class="tarjeta card m-2">
+        <img src="https://t1.ea.ltmcdn.com/es/posts/5/8/1/cuidados_de_una_capibara_20185_600.jpg" class="card-img-top" alt={{prueba.id}}>
+        <div class="card-body text-center">
+          <h5 class="card-title">{{prueba.title}}</h5>
+          <p class="card-text">{{prueba.body}}</p>
+          <a href="#" class="btn btn-primary">Solicitar cita</a>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Las tarjetas adicionales se agregarán automáticamente en nuevas columnas -->
+  </div>
+</div>
