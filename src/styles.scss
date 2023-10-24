@@ -45,3 +45,6 @@ $colorFooter: #176B87;
   --bs-btn-disabled-bg: #ff2323; /* Cambiar el color de fondo en estado deshabilitado */
   --bs-btn-disabled-border-color: #ff2323;
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { Navigation } from '../../interfaces/nav.interface';
 
+
 @Component({
-  selector: 'app-header',
+  selector: 'shared-app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })

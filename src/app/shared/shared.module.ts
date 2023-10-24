@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { GetIntoModule } from '../get-into/get-into.module';
+
+
 
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -15,7 +18,7 @@ import { ContactComponent } from './pages/contact/contact.component';
     HomePageComponent,
     OurServicesComponent,
     ContactComponent],
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, GetIntoModule],
   exports: [
     HeaderComponent,
     FooterComponent,

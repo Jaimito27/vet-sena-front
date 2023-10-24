@@ -1,4 +1,4 @@
-export interface Prueba{
+export interface Prueba {
   userId: number;
   id: number;
   title: string;
