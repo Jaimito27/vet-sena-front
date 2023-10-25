@@ -1,3 +1,4 @@
+
 //Boton flotante
 .float{
 
@@ -29,4 +30,25 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+::ng-deep .hola{
+  position: relative;
+  --mdc-plain-tooltip-container-color: white !important;
+  --mdc-plain-tooltip-supporting-text-color: black !important;
+  --mdc-plain-tooltip-supporting-text-size: 1rem !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 20px !important;
+}
+
+::ng-deep .hola::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -10px; /* Ajusta la posición de la flecha */
+  transform: translateY(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent transparent white; /* Ajusta el color de la flecha */
+
 }

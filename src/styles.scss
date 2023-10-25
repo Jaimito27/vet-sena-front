@@ -9,16 +9,14 @@ $colorBtnNavbar2: #a9e6df;
 $colorFooter: #176B87;
 
 
-.cuerpo{
-  background-color: $colorFondo;
-}
-
-html, body { height: 100%; }
+html, body { height: 100%;  background-color: $colorFondo;}
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 h1{
 font-family: 'Nerko One', cursive !important;
 font-size: 3rem !important;
+padding: 1rem;
 }
+
 
 
 

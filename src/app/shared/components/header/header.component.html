@@ -19,7 +19,7 @@
                 <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
                     <li class="nav-item" *ngFor="let link of links">
                         <a [routerLink]="link.link" routerLinkActive="active" class="nav-link mx-lg-2" aria-current="page">
-                          <span class="material-symbols-outlined align-text-top">
+                          <span class="material-symbols-outlined align-text-bottom">
                            {{link.icon}}
                             </span>
                           {{link.label}}</a>
@@ -27,11 +27,11 @@
                 </ul>
             </div>
         </div>
-        <button (click)="openDialog()" class="login-button" *ngIf="!auth; else usuario"><span class="material-symbols-outlined align-text-top pe-1 fs-5">
+        <button (click)="openDialog()" class="login-button" *ngIf="!auth; else usuario"><span class="material-symbols-outlined align-text-bottom pe-1 fs-5">
           login
           </span>Acceso</button>
         <ng-template #usuario>
-          <button class="login-button"><span class="material-symbols-outlined align-text-top pe-1 fs-5">
+          <button class="login-button"><span class="material-symbols-outlined align-text-bottom pe-1 fs-5">
             logout
             </span>Salir</button>
         </ng-template>

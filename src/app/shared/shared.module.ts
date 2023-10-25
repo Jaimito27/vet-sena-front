@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { GetIntoModule } from '../get-into/get-into.module';
 
 import { MatDialogModule } from '@angular/material/dialog';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -19,7 +20,7 @@ import { ContactComponent } from './pages/contact/contact.component';
     OurServicesComponent,
     ContactComponent,
   ],
-  imports: [CommonModule, RouterModule, GetIntoModule, MatDialogModule],
+  imports: [CommonModule, RouterModule, GetIntoModule, MatDialogModule, MatTooltipModule],
   exports: [
     HeaderComponent,
     FooterComponent,
