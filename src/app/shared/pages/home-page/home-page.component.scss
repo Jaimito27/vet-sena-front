@@ -1,13 +1,37 @@
-.quienes{
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
+ .quienes{
+   width: 300px;
+   height: 300px;
+   border-radius: 50%;
+ }
+
+// .picture {
+//   height: 30rem;
+//   border-radius: 5%;
+// }
+// .carousel{
+//   padding-top: 3rem;
+// }
+
+//
+.img {
+  display: flex;
+  height: 20rem;
+  gap: 1rem;
 }
 
-.picture {
-  height: 30rem;
-  border-radius: 5%;
+.img > div {
+  flex: 1;
+  border-radius: 1rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  transition: all 0.8s cubic-bezier(0.25, 0.4, 0.45, 1.4);
 }
-.carousel{
-  padding-top: 3rem;
+
+.img > div:hover {
+  flex: 5;
+}
+
+.pictures{
+  margin: 2rem 4rem;
 }
