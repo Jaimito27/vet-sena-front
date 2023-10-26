@@ -1,54 +1,145 @@
 
-//Boton flotante
-.float{
+// //Boton flotante
+// .float{
 
+// 	position:fixed;
+// 	width:60px;
+// 	height:60px;
+// 	bottom:40px;
+// 	right:40px;
+// 	background-color:#25d366;
+// 	color:#FFF;
+// 	border-radius:50px;
+// 	text-align:center;
+
+// 	box-shadow: 2px 2px 3px #999;
+//   z-index:100;
+// }
+// .float:hover {
+// 	text-decoration: none;
+//   background-color: #1f9f53;
+//   color:#fff;
+// }
+
+// .my-float{
+// 	margin-top:16px;
+// }
+
+// .float svg {
+//   position: absolute;
+//   top: 50%;
+//   left: 50%;
+//   transform: translate(-50%, -50%);
+// }
+
+// ::ng-deep .hola{
+//   position: relative;
+//   --mdc-plain-tooltip-container-color: white !important;
+//   --mdc-plain-tooltip-supporting-text-color: black !important;
+//   --mdc-plain-tooltip-supporting-text-size: 1rem !important;
+//   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+//   border-radius: 20px !important;
+// }
+
+// ::ng-deep .hola::after {
+//   content: "";
+//   position: absolute;
+//   top: 50%;
+//   right: -10px; /* Ajusta la posición de la flecha */
+//   transform: translateY(-50%);
+//   border-width: 5px;
+//   border-style: solid;
+//   border-color: transparent transparent transparent white; /* Ajusta el color de la flecha */
+
+// }
+
+.float{
 	position:fixed;
-	width:60px;
-	height:60px;
 	bottom:40px;
 	right:40px;
-	background-color:#25d366;
-	color:#FFF;
-	border-radius:50px;
-	text-align:center;
-
-	box-shadow: 2px 2px 3px #999;
   z-index:100;
 }
-.float:hover {
-	text-decoration: none;
-  background-color: #1f9f53;
-  color:#fff;
+
+.wrapper .whatsapp:hover, .wrapper .whatsapp:hover, .wrapper .whatsapp:hover {
+  background: #1f9f53;
+  color: #ffffff;
 }
 
-.my-float{
-	margin-top:16px;
-}
 
-.float svg {
+
+.wrapper .tooltip::before{
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-::ng-deep .hola{
-  position: relative;
-  --mdc-plain-tooltip-container-color: white !important;
-  --mdc-plain-tooltip-supporting-text-color: black !important;
-  --mdc-plain-tooltip-supporting-text-size: 1rem !important;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  border-radius: 20px !important;
-}
-
-::ng-deep .hola::after {
   content: "";
-  position: absolute;
-  top: 50%;
-  right: -10px; /* Ajusta la posición de la flecha */
-  transform: translateY(-50%);
-  border-width: 5px;
+  height: 0;
+  width: 0;
+  background: #ffffff;
+  bottom: 50%;
+  left: auto;
+  right: -10px;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   border-style: solid;
-  border-color: transparent transparent transparent white; /* Ajusta el color de la flecha */
+  border-width: 4px 4px 4px 4px;
+
+  border-color: transparent transparent transparent #ffffff;
+  top: 50% !important;
+   transform:  translateY(-50%) translateX(-60%) rotate(45deg);
+}
+
+.wrapper .icon:hover .tooltip{
+  top: -45px;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.wrapper .icon:hover span, .wrapper .icon:hover .tooltip {
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+}
+
+.wrapper .icon{
+  position: relative;
+  background: #25D366;
+  color: #ffffff;
+  border-radius: 50%;
+  padding: 5px;
+  padding-bottom: 7px;
+  margin: 5px;
+  width: 65px;
+  height: 65px;
+  font-size: 9px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+
+
+.wrapper .tooltip{
+  position: absolute;
+  top: 50% !important;
+  font-size: 14px;
+  background: #ffffff;
+  color: black;
+  padding: 5px 8px;
+  border-radius: 5px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transform: translateY(-50%);
+  width: 9rem;
+  text-align: center;
+  left: auto;
+  right:  calc(100% + 15px);
+}
+
+hr{
+  margin: 0.8rem 8rem;
+  color:white;
 
 }
+
