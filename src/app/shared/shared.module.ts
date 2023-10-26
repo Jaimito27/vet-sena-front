@@ -11,6 +11,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { OurServicesComponent } from './pages/our-services/our-services.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { Error404PageComponent } from './pages/404/error404-page/error404-page.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { ContactComponent } from './pages/contact/contact.component';
     HomePageComponent,
     OurServicesComponent,
     ContactComponent,
+    Error404PageComponent,
   ],
   imports: [CommonModule, RouterModule, GetIntoModule, MatDialogModule, MatTooltipModule],
   exports: [
