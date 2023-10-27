@@ -1,10 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { GetIntoModule } from '../get-into/get-into.module';
+import { AuthModule } from '../auth/auth.module';
 
 import { MatDialogModule } from '@angular/material/dialog';
-
 
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -22,7 +21,7 @@ import { Error404PageComponent } from './pages/404/error404-page/error404-page.c
     ContactComponent,
     Error404PageComponent,
   ],
-  imports: [CommonModule, RouterModule, GetIntoModule, MatDialogModule],
+  imports: [CommonModule, RouterModule, AuthModule, MatDialogModule],
   exports: [
     HeaderComponent,
     FooterComponent,

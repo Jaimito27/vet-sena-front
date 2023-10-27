@@ -4,6 +4,7 @@ import { HomePageComponent } from './shared/pages/home-page/home-page.component'
 import { OurServicesComponent } from './shared/pages/our-services/our-services.component';
 import { ContactComponent } from './shared/pages/contact/contact.component';
 import { Error404PageComponent } from './shared/pages/404/error404-page/error404-page.component';
+import { SheduleComponent } from './shedule/components/shedule/shedule.component';
 
 const routes: Routes = [
   {
@@ -18,29 +19,32 @@ const routes: Routes = [
     path: 'servicios',
     component: OurServicesComponent,
   },
-    {
-    path: 'login',
-    loadChildren: () => import ('./get-into/get-into.module').then(m => m.GetIntoModule)
-  },
-
   {
-  path: '',
-  redirectTo: 'home',
-  pathMatch: 'full'
+    path: 'login',
+    loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule),
+  },
+  {
+    path: 'shedule',
+    component: SheduleComponent
+  },
+  {
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full',
   },
   {
     path: '404',
-    component: Error404PageComponent
+    component: Error404PageComponent,
   },
   {
     path: '**',
-    redirectTo: '404'
-  },
+    redirectTo: '404',
+  }
 
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatDialogModule } from '@angular/material/dialog';
 import { RouterModule } from '@angular/router';
-import { GetIntoRoutingModule } from './get-into-routing.module';
+import { AuthRoutingModule } from './auth-routing.module';
 
 import { LoginComponent } from './pages/login/login.component';
 import { SignInComponent } from './pages/sign-in/sign-in.component';
@@ -16,10 +16,10 @@ import { SignInComponent } from './pages/sign-in/sign-in.component';
     CommonModule,
     MatDialogModule,
     RouterModule,
-    GetIntoRoutingModule
+    AuthRoutingModule
   ],
   exports:[
     LoginComponent
   ]
 })
-export class GetIntoModule { }
+export class AuthModule { }
