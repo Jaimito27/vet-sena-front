@@ -6,13 +6,19 @@
   padding-top: 100px;
 }
 
-.navbar {
+.navbar{
   background-color: $colorNavbar;
   height: 80px;
   margin: 20px;
   border-radius: 16px;
   padding: 0.5rem;
   z-index: 1
+}
+
+
+.offcanvas-body{
+  background-color: $colorNavbar;
+  border-radius: 16px;
 }
 
 .navbar-brand {
@@ -77,3 +83,6 @@
   }
 }
 
+.logo{
+  font-size: 3rem;
+}
