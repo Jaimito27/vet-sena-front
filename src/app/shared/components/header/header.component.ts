@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Navigation } from '../../interfaces/nav.interface';
 
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
@@ -10,18 +10,30 @@ import { LoginComponent } from 'src/app/auth/pages/login/login.component';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit{
 
-  links: Navigation[]=[
+  linksDefault: Navigation[]=[
     {link: 'home', icon: 'home', label: 'Inicio'},
     {link: 'contacto', icon: 'contact_support', label: 'Contactanos'},
-    {link: 'servicios', icon: 'design_services', label: 'Servicios'},
-    {link: 'shedule', icon: 'view_agenda', label: 'Citas'},
+    {link: 'servicios', icon: 'design_services', label: 'Servicios'}
     ]
 
-  auth: boolean = false;
+  linksAuth: Navigation[]=[
+    {link: 'shedule', icon: 'view_agenda', label: 'Citas'},
+    {link: 'pets', icon: 'pet_supplies', label: 'Mascotas'},
+  ]
+
+  auth: boolean = true;
+
+  links: Navigation[] = []
 
   constructor(private dialogRef: MatDialog,) { }
+  ngOnInit(): void {
+    this.links = this.linksDefault
+    if(this.auth){
+      this.links = [...this.linksDefault, ...this.linksAuth];
+    }
+  }
 
   openDialog(): void {
      const dialogRef: MatDialogRef<LoginComponent> = this.dialogRef.open(LoginComponent, {
@@ -29,6 +41,7 @@ export class HeaderComponent {
       disableClose: true,
 
     });
+
 
 
 }}

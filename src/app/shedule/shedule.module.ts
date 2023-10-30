@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SheduleComponent } from './components/shedule/shedule.component';
+import { SheduleComponent } from './pages/shedule/shedule.component'
 import { RouterModule } from '@angular/router';
 
 @NgModule({

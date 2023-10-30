@@ -7,6 +7,8 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PetsModule } from './pets/pets.module';
+
 
 
 @NgModule({
@@ -17,6 +19,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     SharedModule,
     AuthModule,
     SheduleModule,
+    PetsModule,
     BrowserAnimationsModule,
   ],
   providers: [],
