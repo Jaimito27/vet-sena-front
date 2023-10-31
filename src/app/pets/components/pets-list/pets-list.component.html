@@ -12,30 +12,33 @@
           <p class="card-text" >
             <strong  >Peligroso: </strong >
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 64 64" *ngIf="pet.dangerous; else noPeligroso">
-                <rect width="100%" height="100%" fill="red" rx="10" ry="10" />
+                <rect width="100%" height="100%" fill="#ff2323" rx="10" ry="10" />
                 <line x1="20" y1="20" x2="44" y2="44" stroke="#FFFFFF" stroke-width="6" />
                 <line x1="20" y1="44" x2="44" y2="20" stroke="#FFFFFF" stroke-width="6" />
               </svg>
 
             <ng-template #noPeligroso>
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 64 64">
-                <rect width="100%" height="100%" fill="green" rx="10" ry="10" />
+                <rect width="100%" height="100%" fill="#198754" rx="10" ry="10" />
                 <path d="M16 32l11 11 24-24" fill="none" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" />
               </svg>
 
             </ng-template>
           </p>
-          <a class="btn btn-success me-2"><span class="material-symbols-outlined pe-1 fs-5 align-text-bottom">
+
+          <a class="btn btn-success me-2" ><span class="material-symbols-outlined pe-1 fs-5 align-text-bottom">
             edit
             </span>Editar</a>
             <a class="btn btn-danger"><span class="material-symbols-outlined pe-1 fs-5 align-text-bottom">
               delete
               </span>Eliminar</a>
+
+
+
+
+
         </div>
       </div>
     </div>
-
-
-    <!-- Las tarjetas adicionales se agregarán automáticamente en nuevas columnas -->
   </div>
 </div>

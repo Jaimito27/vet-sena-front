@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { Pet } from '../../interfaces/pet.interface';
 
 @Component({
@@ -7,6 +7,7 @@ import { Pet } from '../../interfaces/pet.interface';
   styleUrls: ['./pets-list.component.scss'],
 })
 export class PetsListComponent {
+
   pets: Pet[] = [
     {
       photo:

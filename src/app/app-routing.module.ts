@@ -6,6 +6,7 @@ import { ContactComponent } from './shared/pages/contact/contact.component';
 import { Error404PageComponent } from './shared/pages/404/error404-page/error404-page.component';
 import { SheduleComponent } from './shedule/pages/shedule/shedule.component';
 import { PetsComponent } from './pets/pages/pets.component';
+import { ProfileComponent } from './profile/pages/profile/profile.component';
 
 const routes: Routes = [
   {
@@ -31,6 +32,10 @@ const routes: Routes = [
   {
     path: 'pets',
     component: PetsComponent,
+  },
+  {
+    path: 'profile',
+    component: ProfileComponent,
   },
   {
     path: '',
