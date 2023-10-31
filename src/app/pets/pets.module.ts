@@ -8,5 +8,6 @@ import { RegisterPetComponent } from './components/register-pet/register-pet.com
 @NgModule({
   declarations: [PetsComponent, PetsListComponent, RegisterPetComponent],
   imports: [CommonModule],
+  exports:[PetsListComponent, RegisterPetComponent]
 })
 export class PetsModule {}

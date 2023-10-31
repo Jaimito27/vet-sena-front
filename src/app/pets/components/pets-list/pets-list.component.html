@@ -26,16 +26,15 @@
             </ng-template>
           </p>
 
-          <a class="btn btn-success me-2" ><span class="material-symbols-outlined pe-1 fs-5 align-text-bottom">
-            edit
-            </span>Editar</a>
-            <a class="btn btn-danger"><span class="material-symbols-outlined pe-1 fs-5 align-text-bottom">
-              delete
-              </span>Eliminar</a>
+<div *ngIf="showButtons" class="text-center">
+  <button class="btn btn-success me-2" ><span class="material-symbols-outlined pe-1 fs-5 align-text-bottom">
+    edit
+    </span>Editar</button>
+    <button class="btn btn-danger"><span class="material-symbols-outlined pe-1 fs-5 align-text-bottom">
+      delete
+      </span>Eliminar</button>
 
-
-
-
+</div>
 
         </div>
       </div>

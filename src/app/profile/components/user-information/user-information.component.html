@@ -1,0 +1,29 @@
+<div class="card">
+  <div class="photo">
+    <img src="https://www.lapatilla.com/wp-content/uploads/2016/05-09/donramon.jpg" class="card-img-top" alt="...">
+  </div>
+  <div class="text-center mt-2">
+
+    <button class="btn btn-success"><span class="material-symbols-outlined align-text-bottom pe-1 fs-5">
+      edit
+      </span>Editar información</button>
+  </div>
+  <div class="card-body">
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"><h3 class="card-text"><strong>Documento de identidad: </strong>1193140294</h3></li>
+    <li class="list-group-item"><h3 class="card-text"><strong>Tipo de documento: </strong>CC</h3></li>
+    <li class="list-group-item"><h3 class="card-text"><strong>Nombres: </strong>Jaime Estiven</h3></li>
+    <li class="list-group-item"><h3 class="card-text"><strong>Apellidos: </strong>Menoyos Bedoya</h3></li>
+    <li class="list-group-item"><h3 class="card-text"><strong>Telefono: </strong>3126074663</h3></li>
+    <li class="list-group-item"><h3 class="card-text"><strong>E-mail: </strong>jaime03mb@gmail.com</h3></li>
+    <li class="list-group-item"><h3 class="card-text"><strong>Fecha de registro: </strong>31/10/2023</h3></li>
+    <li class="list-group-item"><h3 class="card-text"><strong>Mascotas registradas: </strong></h3></li>
+  </ul>
+    <div class="p-3 text-warning-emphasis bg-warning-subtle border border-warning-subtle rounded-3 text-center">
+      Si deseas agregar o eliminar una mascota, dirigete a la sección <a class="pet-direction" href="pets">Mascotas</a>
+    </div>
+    <div>
+      <pets-pets-list [showButtons]="false"></pets-pets-list>
+    </div>
+  </div>
+</div>
