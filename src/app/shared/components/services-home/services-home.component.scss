@@ -1,0 +1,17 @@
+@import '../../../../styles.scss';
+
+span{
+  font-size: 5rem;
+  text-align: center;
+}
+
+
+.card-body:hover{
+  background-color: $colorBtnNavbar;
+  cursor: pointer;
+  color: white;
+}
+
+a{
+  text-decoration: none;
+}

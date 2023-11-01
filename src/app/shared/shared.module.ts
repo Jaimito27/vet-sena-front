@@ -11,6 +11,8 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { OurServicesComponent } from './pages/our-services/our-services.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { Error404PageComponent } from './pages/404/error404-page/error404-page.component';
+import { ServicesHomeComponent } from './components/services-home/services-home.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import { Error404PageComponent } from './pages/404/error404-page/error404-page.c
     OurServicesComponent,
     ContactComponent,
     Error404PageComponent,
+    ServicesHomeComponent,
+    SidebarComponent,
   ],
   imports: [CommonModule, RouterModule, AuthModule, MatDialogModule],
   exports: [
