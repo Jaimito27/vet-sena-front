@@ -13,9 +13,9 @@ import { LoginComponent } from 'src/app/auth/pages/login/login.component';
 export class HeaderComponent implements OnInit{
 
   linksDefault: Navigation[]=[
-    {link: 'home', icon: 'home', label: 'Inicio'},
-    {link: 'contacto', icon: 'contact_support', label: 'Contactanos'},
-    {link: 'servicios', icon: 'design_services', label: 'Servicios'}
+    {link: 'inicio/home', icon: 'home', label: 'Inicio'},
+    {link: 'inicio/contacto', icon: 'contact_support', label: 'Contactanos'},
+    {link: 'inicio/servicios', icon: 'design_services', label: 'Servicios'}
     ]
 
   linksAuth: Navigation[]=[

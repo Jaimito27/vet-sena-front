@@ -1,4 +1,5 @@
-<h1 class="text-center">Nuestros servicios</h1>
+<div class="container">
+  <h1 class="text-center">Nuestros servicios</h1>
 
 
 <div class="row">
@@ -6,24 +7,26 @@
 <shared-sidebar></shared-sidebar>
   </div>
   <div class="col-sm-8">
-    <div class="row justify-content-center">
-      <div class="col-md-4" *ngFor="let prueba of pruebas">
-        <div class="tarjeta card m-2">
-          <img src="{{prueba.avatar}}" class="card-img-top" alt={{prueba.id}}>
-          <div class="card-body text-center">
-            <h2 class="card-title"><strong>{{prueba.first_name}} - {{prueba.last_name}}</strong></h2>
-            <p class="card-text">{{prueba.email}}</p>
-            <a href="shedule" class="btn btn-primary"><span class="material-symbols-outlined pe-1 fs-5 align-text-bottom">
-              task_alt
-              </span>Solicitar cita</a>
-          </div>
-        </div>
-      </div>
-
-
-      <!-- Las tarjetas adicionales se agregarán automáticamente en nuevas columnas -->
-    </div>
+    <shared-service-detail></shared-service-detail>
   </div>
 
 </div>
+</div>
 
+<!-- <div class="row justify-content-center">
+  <div class="col-md-4" *ngFor="let prueba of pruebas">
+    <div class="tarjeta card m-2">
+      <img src="{{prueba.avatar}}" class="card-img-top" alt={{prueba.id}}>
+      <div class="card-body text-center">
+        <h2 class="card-title"><strong>{{prueba.first_name}} - {{prueba.last_name}}</strong></h2>
+        <p class="card-text">{{prueba.email}}</p>
+        <a href="shedule" class="btn btn-primary"><span class="material-symbols-outlined pe-1 fs-5 align-text-bottom">
+          task_alt
+          </span>Solicitar cita</a>
+      </div>
+    </div>
+  </div>
+
+
+
+</div> -->

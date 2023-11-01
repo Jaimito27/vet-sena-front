@@ -1,0 +1,40 @@
+
+
+<div class="container-fluid">
+  <h1 class="text-center">Hospitalización</h1>
+  “Durante la hospitalización ofrecemos el mejor acompañamiento a quienes siempre nos acompañan”
+
+La hospitalización es necesaria para aquellas mascotas que precisen de cuidados difíciles de proporcionar en casa, el hospital cuenta con un área de hospitalización veterinaria especialmente diseñado para dar confort a nuestros pacientes.
+
+Nuestros pacientes siempre están acompañados de un Médico y Auxiliar veterinario, de esta manera la estancia y recuperación de las mascotas es mucho más confortable y los tutores pueden estar más tranquilos cuando tienen que dejar a su perro o gato varios días.
+
+Nos esforzamos por hacer que nuestros pacientes se encuentren lo más cómodos posible cuando tienen que estar hospitalizados, gracias a la disponibilidad de mantas y camas confortables, al mantenimiento de un ambiente tranquilo, ventilación y temperatura correcta en las instalaciones siempre realizando un trato cuidadoso y con mucho cariño hacia cada uno de nuestros pacientes.
+
+Por esta razón hemos diseñado áreas con diferentes tipos de jaulas en función del tamaño y las características de la especie sea canino o felino y de su cuadro clínico.
+
+<!-- <div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Título de la tarjeta</h5>
+    <p class="card-text">Descripción de la tarjeta.</p>
+    <button (click)="mostrarInfo()" class="btn btn-primary">Mostrar información</button>
+  </div>
+  <div *ngIf="infoVisible" class="card-footer">
+    Aquí puedes mostrar información adicional que se despliega al hacer clic en el botón.
+  </div>
+</div> -->
+<div *ngFor="let subService of subServices">
+
+  <div class="card">
+    <div class="card-body" (click)="mostrarInfo()" [ngClass]="{ 'active': active }"><span class="material-symbols-outlined align-text-bottom">
+      stars
+      </span>
+      {{subService.name}}
+    </div>
+
+  </div>
+  <div class="info" *ngIf="infoVisible">
+  {{subService.description}}
+</div>
+</div>
+</div>
+

@@ -13,6 +13,8 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { Error404PageComponent } from './pages/404/error404-page/error404-page.component';
 import { ServicesHomeComponent } from './components/services-home/services-home.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { ServiceDetailComponent } from './components/service-detail/service-detail.component';
+import { SharedRoutingModule } from './shared-routing.module';
 
 @NgModule({
   declarations: [
@@ -24,8 +26,9 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
     Error404PageComponent,
     ServicesHomeComponent,
     SidebarComponent,
+    ServiceDetailComponent,
   ],
-  imports: [CommonModule, RouterModule, AuthModule, MatDialogModule],
+  imports: [CommonModule, RouterModule, AuthModule, MatDialogModule, SharedRoutingModule],
   exports: [
     HeaderComponent,
     FooterComponent,

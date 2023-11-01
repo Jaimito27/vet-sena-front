@@ -1,0 +1,29 @@
+@import '../../../../styles.scss';
+
+.card{
+  margin-top: 1rem;
+  border-radius: 15px;
+}
+
+.card-body{
+  cursor: pointer;
+  font-size: 20px;
+  color: $colorFooter;
+  font-weight: 500 !important;
+}
+
+.card-body:hover{
+  background-color: $colorBtnNavbar2;
+  border-radius: 15px;
+}
+
+.info{
+  margin: 0.8rem;
+}
+
+.active{
+  background-color: $colorBtnNavbar2;
+
+  border: 2px solid $colorFooter;
+  border-radius: 15px;
+}

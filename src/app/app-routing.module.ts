@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomePageComponent } from './shared/pages/home-page/home-page.component';
-import { OurServicesComponent } from './shared/pages/our-services/our-services.component';
-import { ContactComponent } from './shared/pages/contact/contact.component';
+
 import { Error404PageComponent } from './shared/pages/404/error404-page/error404-page.component';
 import { SheduleComponent } from './shedule/pages/shedule/shedule.component';
 import { PetsComponent } from './pets/pages/pets.component';
@@ -10,16 +8,8 @@ import { ProfileComponent } from './profile/pages/profile/profile.component';
 
 const routes: Routes = [
   {
-    path: 'home',
-    component: HomePageComponent,
-  },
-  {
-    path: 'contacto',
-    component: ContactComponent,
-  },
-  {
-    path: 'servicios',
-    component: OurServicesComponent,
+    path: 'inicio',
+    loadChildren: () => import('./shared/shared.module').then((m) => m.SharedModule)
   },
   {
     path: 'login',
