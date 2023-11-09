@@ -2,7 +2,7 @@
 
 <div class="container-fluid">
   <h1 class="text-center">Hospitalización</h1>
-  “Durante la hospitalización ofrecemos el mejor acompañamiento a quienes siempre nos acompañan”
+  Durante la hospitalización ofrecemos el mejor acompañamiento a quienes siempre nos acompañan”
 
 La hospitalización es necesaria para aquellas mascotas que precisen de cuidados difíciles de proporcionar en casa, el hospital cuenta con un área de hospitalización veterinaria especialmente diseñado para dar confort a nuestros pacientes.
 
@@ -22,19 +22,18 @@ Por esta razón hemos diseñado áreas con diferentes tipos de jaulas en funció
     Aquí puedes mostrar información adicional que se despliega al hacer clic en el botón.
   </div>
 </div> -->
-<div *ngFor="let subService of subServices">
 
+
+<div *ngFor="let subService of subServices">
   <div class="card">
-    <div class="card-body" (click)="mostrarInfo()" [ngClass]="{ 'active': active }"><span class="material-symbols-outlined align-text-bottom">
-      stars
-      </span>
+    <div class="card-body" (click)="mostrarInfo(subService)" [ngClass]="{ 'active': subService.active }">
+      <span class="material-symbols-outlined align-text-bottom">stars</span>
       {{subService.name}}
     </div>
-
   </div>
-  <div class="info" *ngIf="infoVisible">
-  {{subService.description}}
-</div>
+  <div class="info" *ngIf="subService.active">
+    {{subService.description}}
+  </div>
 </div>
 </div>
 

@@ -1,4 +1,5 @@
 export interface SubService{
   name: string;
-  description: string
+  description: string,
+  active: boolean
 }
