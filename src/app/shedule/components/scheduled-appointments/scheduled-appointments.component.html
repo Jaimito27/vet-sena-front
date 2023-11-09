@@ -1,1 +1,36 @@
-<p>scheduled-appointments works!</p>
+<h1 class="text-center">
+  <span class="material-symbols-outlined align-top pe-1 fs-5 check">check_circle</span>
+   Citas asignadas
+    <span class="material-symbols-outlined align-top pe-1 fs-5 check">check_circle</span>
+</h1>
+<table class="table table-bordered border-primary">
+
+    <thead  class="table-primary">
+      <tr>
+        <th scope="col">Fecha y hora</th>
+        <th scope="col">Lugar</th>
+        <th scope="col">Servicio</th>
+        <th scope="col">Profesional</th>
+        <th scope="col">Valor</th>
+        <th scope="col">Cancelar</th>
+      </tr>
+    </thead>
+    <tbody class="text-center align-text-top">
+      <tr *ngFor="let appointment of appointments">
+        <td>{{appointment.date}}</td>
+        <td>{{appointment.place}}</td>
+        <td>{{appointment.service}}</td>
+        <td>{{appointment.professional}}</td>
+        <td>$ {{appointment.price}}</td>
+        <td><button class="btn btn-danger"><span class="material-symbols-outlined align-text-bottom pe-1 fs-5">
+          delete
+          </span>Cancelar</button></td>
+      </tr>
+
+    </tbody>
+
+</table>
+
+<div class="p-3 text-warning-emphasis bg-warning-subtle border border-warning-subtle rounded-3 text-center" *ngIf="appointments.length == 0">
+  No tiene citas programadas
+</div>
