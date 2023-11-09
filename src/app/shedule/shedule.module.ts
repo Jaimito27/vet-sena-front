@@ -4,9 +4,10 @@ import { SheduleComponent } from './pages/shedule/shedule.component'
 import { RouterModule } from '@angular/router';
 import { RedirectPetsComponent } from './components/redirect-pets/redirect-pets/redirect-pets.component';
 import { ApplicationFormComponent } from './components/application-form/application-form.component';
+import { ScheduledAppointmentsComponent } from './components/scheduled-appointments/scheduled-appointments.component';
 
 @NgModule({
-  declarations: [SheduleComponent, RedirectPetsComponent, ApplicationFormComponent],
+  declarations: [SheduleComponent, RedirectPetsComponent, ApplicationFormComponent, ScheduledAppointmentsComponent],
   imports: [CommonModule, RouterModule],
   exports:[
     SheduleComponent
