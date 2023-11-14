@@ -8,11 +8,7 @@ import { SubService } from '../../interfaces/subservice.interface';
 })
 export class ServiceDetailComponent {
 
-
-
-
-
-
+  
 
   subServices: SubService[] = [
     { name: 'Hospital canino', description: 'Lorem Ipsun no se que', active: false },
