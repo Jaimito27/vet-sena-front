@@ -24,7 +24,7 @@ export class HeaderComponent implements OnInit{
     {link: 'profile', icon: 'person', label: 'Perfil'},
   ]
 
-  auth: boolean = true;
+  auth: boolean = false;
 
   links: Navigation[] = []
 

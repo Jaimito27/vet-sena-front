@@ -1,7 +1,6 @@
-export interface Prueba {
+export interface Prueba{
+  userId: number;
   id: number;
-  email: string;
-  first_name: string;
-  last_name: string;
-  avatar: string;
+  title: string;
+  body: string;
 }
