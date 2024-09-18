@@ -1,1 +1,38 @@
-<p>bloked works!</p>
+<main class="container">
+  <article>
+    <h1>Usuaurios bloqeados</h1>
+    <div class="container">
+      <h2>Estas son las macotas que tienes registradas</h2>
+      <div class="row justify-content-center">
+        <div class="col-md-4" *ngFor="let pet of pets">
+          <div class="card mb-3">
+
+            <div class="card-body">
+              <h2 class="card-title text-center"><strong>{{pet.name}}</strong></h2>
+              <p class="card-text"><strong>Edad: </strong>{{pet.age}}</p>
+              <p class="card-text"><strong>Tipo: </strong>{{pet.type}}</p>
+              <p class="card-text"><strong>Raza: </strong>{{pet.breed}}</p>
+
+              <div *ngIf="showButtons" class="text-center">
+
+
+ 
+                  <button class="btn btn-warning m-1"
+                  matTooltip="Desbloquear"
+                  matTooltipPosition="left"
+                  matTooltipClass="unlock-tooltip"
+                  ><span class="material-symbols-outlined fs-5 align-text-bottom">
+                    lock_open_right
+                    </span></button>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </article>
+</main>

@@ -3,7 +3,9 @@
   <div class="row justify-content-center">
     <div class="col-md-4" *ngFor="let pet of pets">
       <div class="card mb-3">
-        <img src="{{pet.photo}}" class="card-img-top" >
+        <div class="img">
+          <img src="{{pet.photo}}" class="card-img-top" >
+        </div>
         <div class="card-body">
           <h2 class="card-title text-center"><strong>{{pet.name}}</strong></h2>
           <p class="card-text"><strong>Edad: </strong>{{pet.age}}</p>

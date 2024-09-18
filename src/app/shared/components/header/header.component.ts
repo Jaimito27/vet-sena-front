@@ -28,7 +28,7 @@ export class HeaderComponent implements OnInit{
     {link: 'users', icon: 'person', label: 'Usuarios'}
   ]
 
-  auth: boolean = false;
+  auth: boolean = true;
 
   links: Navigation[] = []
 

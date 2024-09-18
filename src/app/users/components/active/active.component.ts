@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-active',
+  selector: 'app-active-user',
   templateUrl: './active.component.html',
   styleUrls: ['./active.component.scss']
 })
