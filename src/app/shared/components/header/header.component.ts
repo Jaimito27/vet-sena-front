@@ -18,10 +18,14 @@ export class HeaderComponent implements OnInit{
     {link: 'inicio/servicios', icon: 'design_services', label: 'Servicios'}
     ]
 
-  linksAuth: Navigation[]=[
+  linksAuthUser: Navigation[]=[
     {link: 'shedule', icon: 'view_agenda', label: 'Citas'},
     {link: 'pets', icon: 'pet_supplies', label: 'Mascotas'},
     {link: 'profile', icon: 'person', label: 'Perfil'},
+  ]
+
+  linksAuthAdmin: Navigation[]=[
+    {link: 'users', icon: 'person', label: 'Usuarios'}
   ]
 
   auth: boolean = false;
@@ -32,7 +36,7 @@ export class HeaderComponent implements OnInit{
   ngOnInit(): void {
     this.links = this.linksDefault
     if(this.auth){
-      this.links = [...this.linksDefault, ...this.linksAuth];
+      this.links = [...this.linksDefault, ...this.linksAuthUser, ...this.linksAuthAdmin];
     }
   }
 

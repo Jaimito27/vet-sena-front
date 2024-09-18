@@ -10,11 +10,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
+import { UsersComponent } from './users/pages/users.component';
+import { BlokedComponent } from './users/components/bloked/bloked.component';
+import { ActiveComponent } from './users/components/active/active.component';
 
 
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, UsersComponent, BlokedComponent, ActiveComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
