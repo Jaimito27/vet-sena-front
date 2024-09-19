@@ -1,12 +1,29 @@
-<div class="contenedor">
-  <div class="row">
-    <div class="col-sm-6">
-      <app-bloked-user></app-bloked-user>
-    </div>
-    <div class="col-sm-6">
-      <app-active-user></app-active-user>
+<div class="card text-center mx-auto tarjeta">
+  <div class="row p-0 m-0">
+    <div>
+      <div class="card-body">
+        <h2 class="card-title">¿Que tipo de usuario deseas ver?</h2>
+        <p class="card-text">Regístrala, dando clic en el siguiente botón</p>
+      </div>
     </div>
 
+
+    <div class="text-center mt-2">
+
+      <button class="btn btn-warning m-1"><span class="material-symbols-outlined align-text-bottom pe-1 fs-5">
+        lock
+        </span>Bloqueados</button>
+      <button class="btn btn-success m-1"><span class="material-symbols-outlined align-text-bottom pe-1 fs-5">
+          group
+          </span>Activos</button>
+    </div>
 
   </div>
 </div>
+
+
+
+
+      <app-bloked-user></app-bloked-user>
+
+      <app-active-user></app-active-user>
