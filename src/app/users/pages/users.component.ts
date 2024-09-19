@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class UsersComponent {
 
+  activeComponent: 'blocked' | 'active' | null = null;
+
+  setActiveComponent(component: 'blocked' | 'active') {
+    this.activeComponent = component;
+  }
 }

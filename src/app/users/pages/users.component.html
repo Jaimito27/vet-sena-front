@@ -10,10 +10,10 @@
 
     <div class="text-center mt-2">
 
-      <button class="btn btn-warning m-1"><span class="material-symbols-outlined align-text-bottom pe-1 fs-5">
+      <button class="btn btn-warning m-1" (click)="setActiveComponent('blocked')"><span class="material-symbols-outlined align-text-bottom pe-1 fs-5">
         lock
         </span>Bloqueados</button>
-      <button class="btn btn-success m-1"><span class="material-symbols-outlined align-text-bottom pe-1 fs-5">
+      <button class="btn btn-success m-1" (click)="setActiveComponent('active')"><span class="material-symbols-outlined align-text-bottom pe-1 fs-5">
           group
           </span>Activos</button>
     </div>
@@ -23,7 +23,5 @@
 
 
 
-
-      <app-bloked-user></app-bloked-user>
-
-      <app-active-user></app-active-user>
+<app-bloked-user *ngIf="activeComponent === 'blocked'"></app-bloked-user>
+<app-active-user *ngIf="activeComponent === 'active'"></app-active-user>
