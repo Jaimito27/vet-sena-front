@@ -1,14 +1,13 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { Pet } from 'src/app/pets/interfaces/pet.interface';
 
 @Component({
-  selector: 'app-locked-user',
-  templateUrl: './locked.component.html',
-  styleUrls: ['./locked.component.scss']
+  selector: 'app-active-employee',
+  templateUrl: './active-employee.component.html',
+  styleUrls: ['./active-employee.component.scss']
 })
-export class LockedUsersComponent {
+export class ActiveEmployeeComponent {
 
-  
   pets: Pet[] = [
     {
       photo:
@@ -74,5 +73,4 @@ export class LockedUsersComponent {
       dangerous: false,
     },
   ];
-
 }

@@ -1,14 +1,13 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { Pet } from 'src/app/pets/interfaces/pet.interface';
 
 @Component({
-  selector: 'app-locked-user',
-  templateUrl: './locked.component.html',
-  styleUrls: ['./locked.component.scss']
+  selector: 'app-locked-employee',
+  templateUrl: './locked-employee.component.html',
+  styleUrls: ['./locked-employee.component.scss']
 })
-export class LockedUsersComponent {
+export class LockedEmployeeComponent {
 
-  
   pets: Pet[] = [
     {
       photo:
