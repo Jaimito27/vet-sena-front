@@ -2,11 +2,11 @@ import { Component, Input } from '@angular/core';
 import { Pet } from 'src/app/pets/interfaces/pet.interface';
 
 @Component({
-  selector: 'app-bloked-user',
-  templateUrl: './bloked.component.html',
-  styleUrls: ['./bloked.component.scss']
+  selector: 'app-locked-user',
+  templateUrl: './locked.component.html',
+  styleUrls: ['./locked.component.scss']
 })
-export class BlokedComponent {
+export class LockedUsersComponent {
 
   @Input() showButtons: boolean = true;
 

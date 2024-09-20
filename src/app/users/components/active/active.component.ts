@@ -6,7 +6,7 @@ import { Pet } from 'src/app/pets/interfaces/pet.interface';
   templateUrl: './active.component.html',
   styleUrls: ['./active.component.scss']
 })
-export class ActiveComponent {
+export class ActiveUsersComponent {
 
   pets: Pet[] = [
     {

@@ -11,6 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { UsersModule } from './users/users.module';
+import { EmployeesModule } from 'src/employees/employees.module';
 
 
 
@@ -26,6 +27,7 @@ import { UsersModule } from './users/users.module';
     PetsModule,
     ProfileModule,
     UsersModule,
+    EmployeesModule,
     BrowserAnimationsModule,
   ],
   providers: [],

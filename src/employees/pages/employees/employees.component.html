@@ -1,1 +1,26 @@
-<p>employees works!</p>
+<div class="card text-center mx-auto tarjeta">
+  <div class="row p-0 m-0">
+    <div>
+      <div class="card-body">
+        <h2 class="card-title">¿Que tipo de empleado deseas ver?</h2>
+        <p class="card-text">Regístrala, dando clic en el siguiente botón</p>
+      </div>
+    </div>
+
+
+    <div class="text-center mt-2">
+
+      <button class="btn btn-warning m-1" (click)="setActiveComponent('blocked')"><span class="material-symbols-outlined align-text-bottom pe-1 fs-5">
+        lock
+        </span>Bloqueados</button>
+      <button class="btn btn-success m-1" (click)="setActiveComponent('active')"><span class="material-symbols-outlined align-text-bottom pe-1 fs-5">
+          group
+          </span>Activos</button>
+    </div>
+
+  </div>
+</div>
+
+
+<app-locked-employee *ngIf="activeComponent === 'blocked'"></app-locked-employee>
+<app-active-employee *ngIf="activeComponent === 'active'"></app-active-employee>

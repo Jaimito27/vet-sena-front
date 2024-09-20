@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ActiveComponent } from './active.component';
+import { LockedEmployeeComponent } from './locked-employee.component';
 
-describe('ActiveComponent', () => {
-  let component: ActiveComponent;
-  let fixture: ComponentFixture<ActiveComponent>;
+describe('BlockedEmployeeComponent', () => {
+  let component: LockedEmployeeComponent;
+  let fixture: ComponentFixture<LockedEmployeeComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ActiveComponent ]
+      declarations: [ LockedEmployeeComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ActiveComponent);
+    fixture = TestBed.createComponent(LockedEmployeeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
