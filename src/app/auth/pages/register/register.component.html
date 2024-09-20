@@ -20,6 +20,9 @@
       <div class="name col">
         <label for="name" class="form-label">Nombres</label>
         <input type="text" class="form-control" id="name" placeholder="Ingrese su nombre" formControlName="names">
+        <mat-error *ngIf="formRegister.get('names')?.invalid && (formRegister.get('names')?.touched || formRegister.get('names')?.dirty)">
+          Por favor ingrese su nombre
+        </mat-error>
       </div>
       <div class="col">
         <label for="lastName" class="form-label">Apellidos</label>
@@ -30,10 +33,16 @@
       <div class="name col">
         <label for="email" class="form-label">Email</label>
         <input type="email" class="form-control" id="email" placeholder="Ingrese su email" formControlName="email">
+        <mat-error *ngIf="formRegister.get('email')?.invalid && (formRegister.get('email')?.touched || formRegister.get('email')?.dirty)">
+          Debe ingresar un correo electrónico válido.
+        </mat-error>
       </div>
       <div class="col">
         <label for="email2" class="form-label">Confirmar Email</label>
         <input type="email" class="form-control" id="email2" placeholder="Ingrese de nuevo su email" formControlName="confirmEmail">
+        <mat-error *ngIf="formRegister.errors && formRegister.errors['mismatch'] && (formRegister.get('confirmEmail')?.touched || formRegister.get('confirmEmail')?.dirty)">
+          Los correos electrónicos no coinciden.
+        </mat-error>
       </div>
     </div>
     <div class="mb-3 small-input">
@@ -44,10 +53,16 @@
       <div class="name col">
         <label for="password" class="form-label">Contraseña</label>
         <input type="password" class="form-control" id="password" placeholder="Cree una contraseña" formControlName="password">
+        <mat-error *ngIf="formRegister.get('password')?.invalid && (formRegister.get('password')?.touched || formRegister.get('password')?.dirty)">
+          La contraseña es requerida y debe tener al menos 6 caracteres.
+        </mat-error>
       </div>
       <div class="col">
         <label for="password2" class="form-label">Contraseña</label>
         <input type="password" class="form-control" id="password2" placeholder="Ingrese de nuevo su contraseña" formControlName="confirmPassword">
+        <mat-error *ngIf="formRegister.errors && formRegister.errors['mismatch'] && (formRegister.get('confirmPassword')?.touched || formRegister.get('confirmPassword')?.dirty)">
+          Las contraseñas no coinciden.
+        </mat-error>
       </div>
     </div>
 
@@ -55,6 +70,7 @@
       <div class="name col">
         <label for="phone" class="form-label">Teléfono</label>
       <input type="text" class="form-control " id="phone" placeholder="Número de teléfono" formControlName="phone">
+
       </div>
 
     </div>
