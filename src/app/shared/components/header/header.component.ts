@@ -29,7 +29,7 @@ export class HeaderComponent implements OnInit{
     {link: 'employees', icon: 'badge', label: 'Empleados' }
   ]
 
-  auth: boolean = true;
+  auth: boolean = false;
 
   links: Navigation[] = []
 

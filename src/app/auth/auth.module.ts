@@ -5,12 +5,13 @@ import { RouterModule } from '@angular/router';
 import { AuthRoutingModule } from './auth-routing.module';
 
 import { LoginComponent } from './pages/login/login.component';
-import { SignInComponent } from './pages/sign-in/sign-in.component';
+import { RegisterComponent } from './pages/register/register.component';
+
 
 @NgModule({
   declarations: [
     LoginComponent,
-    SignInComponent
+    RegisterComponent
   ],
   imports: [
     CommonModule,
