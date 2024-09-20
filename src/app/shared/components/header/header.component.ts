@@ -25,7 +25,8 @@ export class HeaderComponent implements OnInit{
   ]
 
   linksAuthAdmin: Navigation[]=[
-    {link: 'users', icon: 'person', label: 'Usuarios'}
+    {link: 'users', icon: 'group', label: 'Usuarios'},
+    {link: 'employees', icon: 'badge', label: 'Empleados' }
   ]
 
   auth: boolean = true;

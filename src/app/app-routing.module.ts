@@ -6,6 +6,7 @@ import { SheduleComponent } from './shedule/pages/shedule/shedule.component';
 import { PetsComponent } from './pets/pages/pets.component';
 import { ProfileComponent } from './profile/pages/profile/profile.component';
 import { UsersComponent } from './users/pages/users.component';
+import { EmployeesComponent } from 'src/employees/pages/employees/employees.component';
 
 const routes: Routes = [
   {
@@ -31,6 +32,10 @@ const routes: Routes = [
   {
     path: 'users',
     component: UsersComponent,
+  },
+  {
+    path: 'employees',
+    component: EmployeesComponent
   },
   {
     path: '',
