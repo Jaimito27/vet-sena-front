@@ -3,6 +3,7 @@ import { RegisterService } from '../../services/register.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { RegisterUser } from '../../interfaces/register.interface';
 
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -12,6 +13,7 @@ export class RegisterComponent {
   public formRegister!: FormGroup;
   passwordMismatch = false;
   emailMismatch = false;
+
 
   constructor(
     private formBuilder: FormBuilder,
@@ -55,11 +57,22 @@ export class RegisterComponent {
     if (this.formRegister.valid) {
       const userData: RegisterUser = this.formRegister.value;
       this.registerService.registerUser(userData).subscribe(
-        (res) => console.log(res),
-        (error) => console.error(error)
+        (res) => {
+
+          console.log(res.message);
+          
+
+        },
+        (error) => {
+          console.error(error);
+
+        }
       );
     } else {
       console.error('El formulario no es válido');
     }
   }
+
+
+
 }
