@@ -6,14 +6,20 @@
         <label for="documentType" class="form-label">Tipo de documento</label>
         <select class="form-select" id="inputGroupSelect01" formControlName="doc_type">
           <option selected>Seleccione su tipo de documento</option>
-          <option value="1">CC</option>
-          <option value="2">RC</option>
-          <option value="3">PE</option>
+          <option value="CC">CC</option>
+          <option value="RC">RC</option>
+          <option value="PE">PE</option>
         </select>
+        <mat-error *ngIf="formRegister.get('doc_type')?.invalid && (formRegister.get('doc_type')?.touched || formRegister.get('doc_type')?.dirty)">
+          Por favor seleccione su tipo de documento
+        </mat-error>
       </div>
       <div class="col">
         <label for="identificationNumber" class="form-label">Número de documento</label>
         <input type="text" class="form-control" id="identificationNumber" placeholder="Digite su número de documento" formControlName="ident_document">
+        <mat-error *ngIf="formRegister.get('ident_document')?.invalid && (formRegister.get('ident_document')?.touched || formRegister.get('ident_document')?.dirty)">
+          Por favor ingrese su número de documento
+        </mat-error>
       </div>
     </div>
     <div class="d-flex mb-3">
@@ -34,20 +40,23 @@
         <label for="email" class="form-label">Email</label>
         <input type="email" class="form-control" id="email" placeholder="Ingrese su email" formControlName="email">
         <mat-error *ngIf="formRegister.get('email')?.invalid && (formRegister.get('email')?.touched || formRegister.get('email')?.dirty)">
-          Debe ingresar un correo electrónico válido.
+          El correo debe tener la estructura correcta
         </mat-error>
       </div>
       <div class="col">
         <label for="email2" class="form-label">Confirmar Email</label>
-        <input type="email" class="form-control" id="email2" placeholder="Ingrese de nuevo su email" formControlName="confirmEmail">
-        <mat-error *ngIf="formRegister.errors && formRegister.errors['mismatch'] && (formRegister.get('confirmEmail')?.touched || formRegister.get('confirmEmail')?.dirty)">
-          Los correos electrónicos no coinciden.
+        <input type="email" class="form-control" id="email2" placeholder="Ingrese de nuevo su email" (input)="validateEmail()">
+        <mat-error *ngIf="emailMismatch">
+          Los correos no coindicen
         </mat-error>
       </div>
     </div>
     <div class="mb-3 small-input">
       <label for="userName" class="form-label">Nombre de usuario</label>
       <input type="text" class="form-control " id="userName" placeholder="Cree un nombre de usuario" formControlName="username">
+      <mat-error *ngIf="formRegister.get('username')?.invalid && (formRegister.get('username')?.touched || formRegister.get('username')?.dirty)">
+        Por favor cree un nombre de usuario
+      </mat-error>
     </div>
     <div class="d-flex mb-3">
       <div class="name col">
@@ -59,9 +68,9 @@
       </div>
       <div class="col">
         <label for="password2" class="form-label">Contraseña</label>
-        <input type="password" class="form-control" id="password2" placeholder="Ingrese de nuevo su contraseña" formControlName="confirmPassword">
-        <mat-error *ngIf="formRegister.errors && formRegister.errors['mismatch'] && (formRegister.get('confirmPassword')?.touched || formRegister.get('confirmPassword')?.dirty)">
-          Las contraseñas no coinciden.
+        <input type="password" class="form-control" id="password2" placeholder="Ingrese de nuevo su contraseña" (input)="validatePassword()">
+        <mat-error *ngIf="passwordMismatch">
+          Las contraseñas no coincien
         </mat-error>
       </div>
     </div>
@@ -83,5 +92,7 @@
       how_to_reg
       </span>Crear usuario</button>
   </div>
+
+
 
 </form>

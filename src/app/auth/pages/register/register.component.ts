@@ -9,6 +9,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class RegisterComponent {
   public formRegister!: FormGroup;
+  passwordMismatch = false;
+  emailMismatch = false;
+
+
 
   constructor(
     private formBuilder: FormBuilder,
@@ -24,24 +28,26 @@ export class RegisterComponent {
       phone: ['', [Validators.required, Validators.minLength(10)]],
       username: ['', Validators.required],
       password: ['', [Validators.required, Validators.minLength(6)]],
-      confirmPassword: ['', Validators.required],
       email: ['',[Validators.required, Validators.pattern(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)]],
-      confirmEmail: ['', Validators.required],
-    }, { validators: [this.passwordMatchValidator, this.emailMatchValidator] });
+
+    });
   }
 
-  passwordMatchValidator(form: FormGroup) {
-    return form.get('password')?.value === form.get('confirmPassword')?.value
-      ? null : { mismatch: true };
+
+  public validatePassword(): void {
+    const password2 = document.getElementById('password2') as HTMLInputElement;
+    const password = this.formRegister.get('password')?.value;
+    this.passwordMismatch = password !== password2.value;
   }
 
-  emailMatchValidator(form: FormGroup) {
-    return form.get('email')?.value === form.get('confirmEmail')?.value
-      ? null : { mismatch: true };
-  }
+ public validateEmail(): void {
+    const email2 = document.getElementById('email2') as HTMLInputElement;
+    const email = this.formRegister.get('email')?.value;
+    this.emailMismatch = email !== email2.value;
+ }
 
   public onSubmit(): void{
-
+    console.log(this.formRegister.value);
   }
 
 }
