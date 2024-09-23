@@ -59,8 +59,12 @@ export class RegisterComponent {
       this.registerService.registerUser(userData).subscribe(
         (res) => {
 
-          console.log(res.message);
-          
+
+          alert(res.message)
+          if(res.status === 201){
+            this.formRegister.reset()
+          }
+
 
         },
         (error) => {
