@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { RegisterService } from '../../services/register.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { RegisterUser } from '../../interfaces/register.interface';
-
+import Swal, { SweetAlertIcon } from 'sweetalert2';
 
 @Component({
   selector: 'app-register',
@@ -13,7 +13,6 @@ export class RegisterComponent {
   public formRegister!: FormGroup;
   passwordMismatch = false;
   emailMismatch = false;
-
 
   constructor(
     private formBuilder: FormBuilder,
@@ -58,18 +57,15 @@ export class RegisterComponent {
       const userData: RegisterUser = this.formRegister.value;
       this.registerService.registerUser(userData).subscribe(
         (res) => {
-
-
-          alert(res.message)
-          if(res.status === 201){
-            this.formRegister.reset()
+          if (res.status === 409) {
+            this.alertMessage('Error', res.message, 'warning');
+          } else if (res.status === 201) {
+            this.alertMessage('Atención', res.message, 'success')
+            this.formRegister.reset();
           }
-
-
         },
         (error) => {
           console.error(error);
-
         }
       );
     } else {
@@ -77,6 +73,12 @@ export class RegisterComponent {
     }
   }
 
-
-
+//función para el sweet alert
+  public alertMessage(title: string, text: string, icon: SweetAlertIcon): void {
+    Swal.fire({
+      title,
+      text,
+      icon,
+    });
+  }
 }
