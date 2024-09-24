@@ -12,6 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { UsersModule } from './users/users.module';
 import { EmployeesModule } from './employees/employees.module';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -28,6 +29,7 @@ import { EmployeesModule } from './employees/employees.module';
     ProfileModule,
     UsersModule,
     EmployeesModule,
+    HttpClientModule,
     BrowserAnimationsModule,
   ],
   providers: [],

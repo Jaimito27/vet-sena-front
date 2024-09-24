@@ -6,29 +6,21 @@ import { AuthRoutingModule } from './auth-routing.module';
 
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
-import { HttpClientModule } from '@angular/common/http';
+
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {MatFormFieldModule} from '@angular/material/form-field';
-
-
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
-  declarations: [
-    LoginComponent,
-    RegisterComponent
-  ],
+  declarations: [LoginComponent, RegisterComponent],
   imports: [
     CommonModule,
     MatDialogModule,
     RouterModule,
-    HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
     MatFormFieldModule,
-    AuthRoutingModule
+    AuthRoutingModule,
   ],
-  exports:[
-    LoginComponent
-  ]
+  exports: [LoginComponent],
 })
-export class AuthModule { }
+export class AuthModule {}
