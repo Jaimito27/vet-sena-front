@@ -4,13 +4,14 @@ import { HttpClient } from '@angular/common/http';
 import { RegisterUser } from '../interfaces/register.interface';
 import { Observable } from 'rxjs';
 import { ResponseRegister } from '../interfaces/response.interface';
+import { environment } from 'src/environments/environments';
 
 @Injectable({
   providedIn: 'root',
 })
 export class RegisterService {
 
-  API_URL: string = 'http://localhost:3000/'
+  private readonly API_URL: string = environment.API_URL;
   constructor(private http: HttpClient) {}
 
   registerUser(user: RegisterUser): Observable<ResponseRegister>{
