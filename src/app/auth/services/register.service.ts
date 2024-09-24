@@ -11,17 +11,15 @@ import { environment } from 'src/environments/environments';
 })
 export class RegisterService {
 
-<<<<<<< HEAD
+
   private readonly API_URL: string = environment.API_URL;
   constructor(private http: HttpClient) {}
-=======
-  private readonly baseUrl: string = environment.baseUrl
-  private http = inject(HttpClient)
-  constructor() {}
->>>>>>> f94616202ff189b7227050aa35c3d0f4a6ef7ef6
+
+
+
 
   registerUser(user: RegisterUser): Observable<ResponseRegister>{
-    return this.http.post<ResponseRegister>(`${this.baseUrl}/users`, user)
+    return this.http.post<ResponseRegister>(`${this.API_URL}/users`, user)
   }
 
 
