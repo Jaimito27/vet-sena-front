@@ -11,14 +11,17 @@
       <img src="https://pbs.twimg.com/media/E55byN9WEAYTNH9.jpg" alt="capibara">
     </div>
     <h1 class="text-center">Iniciar sesión</h1>
-    <form action="">
+    <form [formGroup]="formLogin">
       <div class="input-group mb-3">
         <span class="material-symbols-outlined input-group-text align-text-bottom" id="basic-addon1">person</span>
-        <input type="text" class="form-control" placeholder="Usuario" aria-label="Username" aria-describedby="basic-addon1"/>
+        <input type="text" class="form-control" id="userName" placeholder="Usuario" formControlName="username"/>
       </div>
       <div class="input-group mb-3">
         <span class="material-symbols-outlined input-group-text align-text-bottom" id="basic-addon1">vpn_key</span>
-        <input type="password" class="form-control" placeholder="Contraseña" aria-label="Username" aria-describedby="basic-addon1"/>
+        <input type="password" class="form-control" id="password" placeholder="Contraseña" formControlName="password"/>
+        <mat-error *ngIf="formLogin.get('password')?.invalid && (formLogin.get('password')?.touched || formLogin.get('password')?.dirty)">
+          La contraseña es requerida y debe tener al menos 6 caracteres.
+        </mat-error>
         <br>
       </div>
       <div class="forgot">
@@ -28,7 +31,7 @@
 
 
 
-      <button class="btn btn-primary"><span class="material-symbols-outlined align-text-bottom pe-1 fs-5">
+      <button class="btn btn-primary" (click)="login()"><span class="material-symbols-outlined align-text-bottom pe-1 fs-5">
         login
         </span>Ingresar</button>
 
