@@ -22,27 +22,32 @@ const routes: Routes = [
   {
     path: 'shedule',
     component: SheduleComponent,
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard],
+    data: {roles: ['user', 'admin']}
   },
   {
     path: 'pets',
     component: PetsComponent,
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard],
+    data: {roles: ['user', 'admin']}
   },
   {
     path: 'profile',
     component: ProfileComponent,
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard],
+    data: {roles: ['user', 'admin']}
   },
   {
     path: 'users',
     component: UsersComponent,
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard],
+    data: {roles: ['admin']}
   },
   {
     path: 'employees',
     component: EmployeesComponent,
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard],
+    data: {roles: ['admin']}
   },
   {
     path: '',
