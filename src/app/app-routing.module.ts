@@ -7,6 +7,7 @@ import { PetsComponent } from './pets/pages/pets.component';
 import { ProfileComponent } from './profile/pages/profile/profile.component';
 import { UsersComponent } from './users/pages/users.component';
 import { EmployeesComponent } from './employees/pages/employees/employees.component';
+import { AuthGuard } from './auth/guards/auth.guard';
 
 
 const routes: Routes = [
@@ -21,22 +22,27 @@ const routes: Routes = [
   {
     path: 'shedule',
     component: SheduleComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'pets',
     component: PetsComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'profile',
     component: ProfileComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'users',
     component: UsersComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'employees',
-    component: EmployeesComponent
+    component: EmployeesComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: '',

@@ -3,6 +3,8 @@ import { Navigation } from '../../interfaces/nav.interface';
 
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { LoginComponent } from 'src/app/auth/pages/login/login.component';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/auth/services/auth.service';
 
 
 @Component({
@@ -11,6 +13,8 @@ import { LoginComponent } from 'src/app/auth/pages/login/login.component';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit{
+
+
 
   linksDefault: Navigation[]=[
     {link: 'inicio/home', icon: 'home', label: 'Inicio'},
@@ -29,11 +33,11 @@ export class HeaderComponent implements OnInit{
     {link: 'employees', icon: 'badge', label: 'Empleados' }
   ]
 
-  auth: boolean = false;
+  auth: boolean = true;
 
   links: Navigation[] = []
 
-  constructor(private dialogRef: MatDialog,) { }
+  constructor(private dialogRef: MatDialog, private	authService: AuthService, private router: Router) { }
   ngOnInit(): void {
     this.links = this.linksDefault
     if(this.auth){
@@ -45,9 +49,18 @@ export class HeaderComponent implements OnInit{
      const dialogRef: MatDialogRef<LoginComponent> = this.dialogRef.open(LoginComponent, {
       width: '25%',
       disableClose: true,
-
     });
 
 
 
-}}
+}
+
+logout(): void{
+  this.authService.logout();
+  this.router.navigate(['/inicio/home']);
+}
+
+
+}
+
+

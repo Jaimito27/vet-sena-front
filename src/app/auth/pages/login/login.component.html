@@ -1,9 +1,10 @@
-
 <section>
   <button class="btn btn-danger mt-2" mat-dialog-close>
-    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-x-circle" viewBox="0 0 16 16">
-      <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-      <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-x-circle"
+      viewBox="0 0 16 16">
+      <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+      <path
+        d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
     </svg>
   </button>
   <div class="container">
@@ -14,12 +15,13 @@
     <form [formGroup]="formLogin" (ngSubmit)="onSubmit()">
       <div class="input-group mb-3">
         <span class="material-symbols-outlined input-group-text align-text-bottom" id="basic-addon1">person</span>
-        <input type="text" class="form-control" placeholder="Usuario" formControlName="username"/>
+        <input type="text" class="form-control" placeholder="Usuario" formControlName="username" />
       </div>
       <div class="input-group mb-3">
         <span class="material-symbols-outlined input-group-text align-text-bottom" id="basic-addon1">vpn_key</span>
-        <input type="password" class="form-control" placeholder="Contraseña" formControlName="password"/>
-        <mat-error *ngIf="formLogin.get('password')?.invalid && (formLogin.get('password')?.touched || formLogin.get('password')?.dirty)">
+        <input type="password" class="form-control" placeholder="Contraseña" formControlName="password" />
+        <mat-error
+          *ngIf="formLogin.get('password')?.invalid && (formLogin.get('password')?.touched || formLogin.get('password')?.dirty)">
           La contraseña es requerida y debe tener al menos 6 caracteres.
         </mat-error>
         <br>
@@ -32,26 +34,26 @@
 
 
       <button type="submit" class="btn btn-primary"><span class="material-symbols-outlined align-text-bottom pe-1 fs-5">
-        login
+          login
         </span>Ingresar</button>
 
     </form>
-<hr>
-<div class="text-center">
+    <hr>
+    <div class="text-center">
 
-  <small>¿No estás registrado áun?</small>
-</div>
-<div class="text-center mb-2">
+      <small>¿No estás registrado áun?</small>
+    </div>
+    <div class="text-center mb-2">
 
-  <a class="btn btn-success text-center"[routerLink]="'/login/register'" mat-dialog-close><span class="material-symbols-outlined align-text-bottom pe-1 fs-5">
-    how_to_reg
-    </span>Registrarse</a>
-</div>
+      <a class="btn btn-success text-center" [routerLink]="'/login/register'" mat-dialog-close><span
+          class="material-symbols-outlined align-text-bottom pe-1 fs-5">
+          how_to_reg
+        </span>Registrarse</a>
+    </div>
 
-
-ji
 
   </div>
 
-</section>
 
+
+</section>
