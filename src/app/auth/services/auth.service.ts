@@ -41,4 +41,13 @@ export class AuthService {
   get isLogged$(): Observable<boolean>{
     return this.authState.asObservable();
   }
+
+  getRole(): string | null {
+    const token = this.getToken(); //obtiene el token
+    if(token){
+      const payload = JSON.parse(atob(token.split('.')[1])); //decofica el token
+      return payload.role;
+    }
+    return null;
+  }
 }

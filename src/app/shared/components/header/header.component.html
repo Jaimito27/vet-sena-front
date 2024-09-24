@@ -35,7 +35,7 @@
                 </ul>
             </div>
         </div>
-        <button (click)="openDialog()" class="login-button" *ngIf="!auth; else usuario"><span class="material-symbols-outlined align-text-bottom pe-1 fs-5">
+        <button (click)="openDialog()" class="login-button" *ngIf="!authState; else usuario"><span class="material-symbols-outlined align-text-bottom pe-1 fs-5">
           login
           </span>Acceso</button>
         <ng-template #usuario>

@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
+import { Router } from '@angular/router';
+
 
 
 
@@ -17,6 +19,7 @@ export class LoginComponent {
   constructor(
     private formBuilder: FormBuilder,
     private authService: AuthService,
+    private router: Router
 
   ) { }
 
@@ -32,7 +35,7 @@ export class LoginComponent {
       this.authService.login(this.formLogin.value).subscribe({
         next: (response)=>{
           this.authService.setToken(response.token);
-          console.log(response.token);
+          this.router.navigate(['/profile']);
         }, error: (error) => {
           console.error('Error en el login', error);
           //manejo del error
