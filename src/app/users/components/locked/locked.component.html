@@ -2,16 +2,24 @@
   <article>
     <h1 class="text-center">Usuaurios bloqueados</h1>
     <div class="container">
-      <h2 class="text-center">Estas son las macotas que tienes registradas</h2>
+
       <div class="row justify-content-center">
-        <div class="col-md-4" *ngFor="let pet of pets">
+        <div class="col-md-4" *ngFor="let userLocked of usersLocked">
           <div class="card mb-3">
 
             <div class="card-body">
-              <h2 class="card-title text-center"><strong>{{pet.name}}</strong></h2>
-              <p class="card-text"><strong>Edad: </strong>{{pet.age}}</p>
-              <p class="card-text"><strong>Tipo: </strong>{{pet.type}}</p>
-              <p class="card-text"><strong>Raza: </strong>{{pet.breed}}</p>
+              <h2 class="card-title text-center"><strong>{{userLocked.names}} {{userLocked.last_name}}</strong></h2>
+              <p class="card-text"><strong>Tipo de documento: </strong>{{userLocked.doc_type}}</p>
+              <p class="card-text"><strong>Telefono: </strong>{{userLocked.phone}}</p>
+              <p class="card-text"><strong>Email: </strong>{{userLocked.email}}</p>
+              <p class="card-text"><strong>Fecha de creación: </strong>{{userLocked.creation_date}}</p>
+              <p class="card-text"><strong>Rol: </strong>{{userLocked.role}}</p>
+              <p class="p-2 text-warning-emphasis bg-warning-subtle border border-warning-subtle rounded-3 text-center" *ngIf="userLocked.pets.length === 0">No tienes mascotas registradas.</p>
+              <p class="card-text" *ngIf="userLocked.pets.length !== 0"> <strong>Mascotas asignadas:</strong></p>
+
+              <ol>
+                <li *ngFor="let pet of userLocked.pets">{{pet.name}}</li>
+              </ol>
 
               <div class="text-center">
 
@@ -36,3 +44,4 @@
 
   </article>
 </main>
+

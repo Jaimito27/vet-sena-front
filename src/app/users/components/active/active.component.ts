@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UsersService } from '../../services/users.service';
 import { Users } from '../../interfaces/users.interface';
-
+import Swal, { SweetAlertIcon } from 'sweetalert2';
 
 @Component({
   selector: 'app-active-user',
@@ -17,10 +17,10 @@ export class ActiveUsersComponent implements OnInit {
   ){}
 
   ngOnInit(){
-    this.getProducts();
+    this.getUsers();
   }
 
-  public getProducts(){
+  public getUsers(){
     this.usersService.getUsers().subscribe(
       res => {
         this.users = res
@@ -29,4 +29,24 @@ export class ActiveUsersComponent implements OnInit {
     )
   }
 
+  public blockUser(id: string){
+    this.usersService.blockUser(id).subscribe(
+      res => {
+        this.alertMessage('Atención', 'Usuario bloqueado exitosamente', 'success')
+        this.getUsers();
+      }, error => {
+        this.alertMessage('Atención', error, 'warning')
+      }
+    )
+  }
+
+
+  //función para el sweet alert
+  public alertMessage(title: string, text: string, icon: SweetAlertIcon): void {
+    Swal.fire({
+      title,
+      text,
+      icon,
+    });
+  }
 }
