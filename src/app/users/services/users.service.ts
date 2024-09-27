@@ -24,4 +24,8 @@ export class UsersService {
   public blockUser(id: string):Observable<Users>{
     return this.http.patch<Users>(`${this.API_URL}/users/delete/${id}`, {})
   }
+
+  public unlockUser(id: string): Observable<Users>{
+    return this.http.patch<Users>(`${this.API_URL}/users/unlock/${id}`, {})
+  }
 }

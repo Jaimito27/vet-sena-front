@@ -14,7 +14,8 @@
               <p class="card-text"><strong>Email: </strong>{{userLocked.email}}</p>
               <p class="card-text"><strong>Fecha de creación: </strong>{{userLocked.creation_date}}</p>
               <p class="card-text"><strong>Rol: </strong>{{userLocked.role}}</p>
-              <p class="p-2 text-warning-emphasis bg-warning-subtle border border-warning-subtle rounded-3 text-center" *ngIf="userLocked.pets.length === 0">No tienes mascotas registradas.</p>
+              <p class="p-2 text-warning-emphasis bg-warning-subtle border border-warning-subtle rounded-3 text-center"
+                *ngIf="userLocked.pets.length === 0">No tienes mascotas registradas.</p>
               <p class="card-text" *ngIf="userLocked.pets.length !== 0"> <strong>Mascotas asignadas:</strong></p>
 
               <ol>
@@ -25,13 +26,11 @@
 
 
 
-                  <button class="btn btn-warning m-1"
-                  matTooltip="Desbloquear"
-                  matTooltipPosition="left"
-                  matTooltipClass="unlock-tooltip"
-                  ><span class="material-symbols-outlined fs-5 align-text-bottom">
+                <button class="btn btn-warning m-1" matTooltip="Desbloquear" matTooltipPosition="left"
+                  matTooltipClass="unlock-tooltip" (click)="unlockUser(userLocked.id!)"><span
+                    class="material-symbols-outlined fs-5 align-text-bottom">
                     lock_open_right
-                    </span></button>
+                  </span></button>
 
               </div>
 
@@ -44,4 +43,3 @@
 
   </article>
 </main>
-
