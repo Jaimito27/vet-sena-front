@@ -35,7 +35,7 @@ public unlockUser(id: string){
   this.usersService.unlockUser(id).subscribe(
     res =>{
       this.getUsersLocked()
-      this.alertMessage('Atención', 'Usuario desbloqueado exitosamente', 'success')
+      this.alertMessage('Atención', `El usuario ${res.names} fue desbloqueado exitosamente`, 'success')
     }, err =>{
       console.error(err);
 

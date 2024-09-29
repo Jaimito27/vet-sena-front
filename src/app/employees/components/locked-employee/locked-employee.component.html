@@ -4,14 +4,18 @@
     <div class="container">
       <h2 class="text-center">Estas son las macotas que tienes registradas</h2>
       <div class="row justify-content-center">
-        <div class="col-md-4" *ngFor="let pet of pets">
+        <div class="col-md-4" *ngFor="let employeeLocked of employeesLocked">
           <div class="card mb-3">
 
             <div class="card-body">
-              <h2 class="card-title text-center"><strong>{{pet.name}}</strong></h2>
-              <p class="card-text"><strong>Edad: </strong>{{pet.age}}</p>
-              <p class="card-text"><strong>Tipo: </strong>{{pet.type}}</p>
-              <p class="card-text"><strong>Raza: </strong>{{pet.breed}}</p>
+              <h2 class="card-title text-center"><strong>{{employeeLocked.names}} {{employeeLocked.last_name}}</strong></h2>
+
+              <p class="card-text"><strong>Tipo de documento: </strong>{{employeeLocked.doc_type}}</p>
+              <p class="card-text"><strong>Telefono: </strong>{{employeeLocked.phone}}</p>
+              <p class="card-text"><strong>Email: </strong>{{employeeLocked.email}}</p>
+              <p class="card-text"><strong>Fecha de creación: </strong>{{employeeLocked.creation_date}}</p>
+              <p class="card-text"><strong>Rol: </strong>{{employeeLocked.role}}</p>
+
 
               <div class="text-center">
 
@@ -21,6 +25,7 @@
                   matTooltip="Desbloquear"
                   matTooltipPosition="left"
                   matTooltipClass="unlock-tooltip"
+                  (click)="unlockEmployee(employeeLocked.id!)"
                   ><span class="material-symbols-outlined fs-5 align-text-bottom">
                     lock_open_right
                     </span></button>

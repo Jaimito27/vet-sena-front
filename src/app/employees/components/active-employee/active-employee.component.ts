@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { Users } from 'src/app/users/interfaces/users.interface';
 import { EmployeesService } from '../../services/employees.service';
@@ -9,7 +9,7 @@ import Swal, { SweetAlertIcon } from 'sweetalert2';
   templateUrl: './active-employee.component.html',
   styleUrls: ['./active-employee.component.scss']
 })
-export class ActiveEmployeeComponent {
+export class ActiveEmployeeComponent implements OnInit{
 
 employees: Users[] = []
 
