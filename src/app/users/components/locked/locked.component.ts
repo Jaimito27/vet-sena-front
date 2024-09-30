@@ -1,7 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Users } from '../../interfaces/users.interface';
 import { UsersService } from '../../services/users.service';
-import Swal, { SweetAlertIcon } from 'sweetalert2';
+import { AlertMessageService } from 'src/app/shared/services/alert-message.service';
+
 
 @Component({
   selector: 'app-locked-user',
@@ -14,6 +15,7 @@ usersLocked: Users[] = []
 
 constructor(
   private usersService: UsersService,
+  private alertMessageService: AlertMessageService
 ){}
 
 ngOnInit(){
@@ -35,7 +37,8 @@ public unlockUser(id: string){
   this.usersService.unlockUser(id).subscribe(
     res =>{
       this.getUsersLocked()
-      this.alertMessage('Atención', `El usuario ${res.names} fue desbloqueado exitosamente`, 'success')
+      this.alertMessageService.alertMessage('Atención', `El usuario ${res.names} fue desbloqueado exitosamente`, 'success')
+
     }, err =>{
       console.error(err);
 
@@ -43,14 +46,5 @@ public unlockUser(id: string){
   )
 }
 
-
-  //función para el sweet alert
-  public alertMessage(title: string, text: string, icon: SweetAlertIcon): void {
-    Swal.fire({
-      title,
-      text,
-      icon,
-    });
-  }
 
 }

@@ -9,7 +9,7 @@ import { environment } from 'src/environments/environments';
 @Injectable({
   providedIn: 'root',
 })
-export class RegisterService {
+export class RegisterUserService {
 
 
   private readonly API_URL: string = environment.API_URL;

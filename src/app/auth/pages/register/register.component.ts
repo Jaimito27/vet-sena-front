@@ -1,43 +1,29 @@
-import { Component } from '@angular/core';
-import { RegisterService } from '../../services/register.service';
+import { Component, OnInit } from '@angular/core';
+import { RegisterUserService } from '../../services/register.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { RegisterUser } from '../../interfaces/register.interface';
-import Swal, { SweetAlertIcon } from 'sweetalert2';
+
+import { FormUsersService } from 'src/app/shared/services/form-users.service';
+import { AlertMessageService } from 'src/app/shared/services/alert-message.service';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss'],
 })
-export class RegisterComponent {
+export class RegisterComponent implements OnInit{
   public formRegister!: FormGroup;
   passwordMismatch = false;
   emailMismatch = false;
 
   constructor(
-    private formBuilder: FormBuilder,
-    private registerService: RegisterService
+    private formUserService: FormUsersService,
+    private registerUserService: RegisterUserService,
+    private alertMessageService: AlertMessageService //mensaje de alerta
   ) {}
 
   ngOnInit(): void {
-    this.formRegister = this.formBuilder.group({
-      doc_type: ['', Validators.required],
-      ident_document: ['', [Validators.required, Validators.minLength(4)]],
-      names: ['', Validators.required],
-      last_name: [''],
-      phone: ['', [Validators.required, Validators.minLength(10)]],
-      username: ['', Validators.required],
-      password: ['', [Validators.required, Validators.minLength(6)]],
-      email: [
-        '',
-        [
-          Validators.required,
-          Validators.pattern(
-            /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-          ),
-        ],
-      ],
-    });
+    this.formRegister = this.formUserService.createForm();
   }
 
   public validatePassword(): void {
@@ -55,12 +41,12 @@ export class RegisterComponent {
   public onSubmit(): void {
     if (this.formRegister.valid) {
       const userData: RegisterUser = this.formRegister.value;
-      this.registerService.registerUser(userData).subscribe(
+      this.registerUserService.registerUser(userData).subscribe(
         (res) => {
           if (res.status === 409) {
-            this.alertMessage('Error', res.message, 'warning');
+            this.alertMessageService.alertMessage('Error', res.message, 'warning');
           } else if (res.status === 201) {
-            this.alertMessage('Atención', res.message, 'success')
+            this.alertMessageService.alertMessage('Atención', res.message, 'success')
             this.formRegister.reset();
           }
         },
@@ -73,12 +59,6 @@ export class RegisterComponent {
     }
   }
 
-//función para el sweet alert
-  public alertMessage(title: string, text: string, icon: SweetAlertIcon): void {
-    Swal.fire({
-      title,
-      text,
-      icon,
-    });
-  }
+
+
 }

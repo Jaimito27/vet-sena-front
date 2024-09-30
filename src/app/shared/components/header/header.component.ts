@@ -68,7 +68,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
     }
   }
 
-  openDialog(): void {
+  openDialogLogin(): void {
     const dialogRef: MatDialogRef<LoginComponent> = this.dialogRef.open(
       LoginComponent,
       {

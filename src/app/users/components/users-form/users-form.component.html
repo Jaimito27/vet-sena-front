@@ -1,0 +1,109 @@
+<!-- <main>
+  <section>
+    <button class="btn btn-danger mt-2" mat-dialog-close>
+      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-x-circle"
+        viewBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+        <path
+          d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+      </svg>
+    </button>
+
+  </section>
+  <section>
+    <form [formGroup]="formRegister" (ngSubmit)="onSubmit()">
+      <div class="container">
+        <div class="d-flex mb-3">
+          <div class="col">
+            <label for="documentType" class="form-label">Tipo de documento</label>
+            <select class="form-select" id="inputGroupSelect01" formControlName="doc_type">
+              <option selected>Seleccione su tipo de documento</option>
+              <option value="CC">CC</option>
+              <option value="RC">RC</option>
+              <option value="PE">PE</option>
+            </select>
+            <mat-error
+              *ngIf="formRegister.get('doc_type')?.invalid && (formRegister.get('doc_type')?.touched || formRegister.get('doc_type')?.dirty)">
+              Por favor seleccione su tipo de documento
+            </mat-error>
+          </div>
+          <div class="col">
+            <label for="identificationNumber" class="form-label">Número de documento</label>
+            <input type="text" class="form-control" id="identificationNumber"
+              placeholder="Digite su número de documento" formControlName="ident_document">
+            <mat-error
+              *ngIf="formRegister.get('ident_document')?.invalid && (formRegister.get('ident_document')?.touched || formRegister.get('ident_document')?.dirty)">
+              Por favor ingrese su número de documento
+            </mat-error>
+          </div>
+        </div>
+
+        <div class="col">
+          <label for="name" class="form-label">Nombres</label>
+          <input type="text" class="form-control" id="name" placeholder="Ingrese su nombre" formControlName="names">
+          <mat-error
+            *ngIf="formRegister.get('names')?.invalid && (formRegister.get('names')?.touched || formRegister.get('names')?.dirty)">
+            Por favor ingrese su nombre
+          </mat-error>
+        </div>
+        <div class="col">
+          <label for="lastName" class="form-label">Apellidos</label>
+          <input type="text" class="form-control" id="lastName" placeholder="Ingrese su apellido"
+            formControlName="last_name">
+        </div>
+
+
+        <div class="col">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" id="email" placeholder="Ingrese su email" formControlName="email">
+          <mat-error
+            *ngIf="formRegister.get('email')?.invalid && (formRegister.get('email')?.touched || formRegister.get('email')?.dirty)">
+            El correo debe tener la estructura correcta
+          </mat-error>
+        </div>
+
+
+        <div class="col">
+          <label for="userName" class="form-label">Nombre de usuario</label>
+          <input type="text" class="form-control " id="userName" placeholder="Cree un nombre de usuario"
+            formControlName="username">
+          <mat-error
+            *ngIf="formRegister.get('username')?.invalid && (formRegister.get('username')?.touched || formRegister.get('username')?.dirty)">
+            Por favor cree un nombre de usuario
+          </mat-error>
+        </div>
+
+        <div class="col">
+          <label for="password" class="form-label">Contraseña</label>
+          <input type="password" class="form-control" id="password" placeholder="Cree una contraseña"
+            formControlName="password">
+          <mat-error
+            *ngIf="formRegister.get('password')?.invalid && (formRegister.get('password')?.touched || formRegister.get('password')?.dirty)">
+            La contraseña es requerida y debe tener al menos 6 caracteres.
+          </mat-error>
+        </div>
+
+
+        <div class="name col">
+          <label for="phone" class="form-label">Teléfono</label>
+          <input type="text" class="form-control " id="phone" placeholder="Número de teléfono" formControlName="phone">
+
+        </div>
+
+
+
+
+
+      </div>
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary me-2" [disabled]="formRegister.invalid"><span
+            class="material-symbols-outlined pe-1 align-text-bottom fs-5">
+            how_to_reg
+          </span>Crear usuario</button>
+      </div>
+
+
+
+    </form>
+  </section>
+</main> -->

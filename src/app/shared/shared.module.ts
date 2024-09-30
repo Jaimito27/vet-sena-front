@@ -28,7 +28,7 @@ import { SharedRoutingModule } from './shared-routing.module';
     SidebarComponent,
     ServiceDetailComponent,
   ],
-  imports: [CommonModule, RouterModule, AuthModule, MatDialogModule, SharedRoutingModule],
+  imports: [CommonModule, RouterModule, AuthModule,  SharedRoutingModule],
   exports: [
     HeaderComponent,
     FooterComponent,

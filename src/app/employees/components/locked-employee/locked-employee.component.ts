@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Users } from 'src/app/users/interfaces/users.interface';
 import { EmployeesService } from '../../services/employees.service';
 import { UsersService } from 'src/app/users/services/users.service';
-import Swal, { SweetAlertIcon } from 'sweetalert2';
+import { AlertMessageService } from 'src/app/shared/services/alert-message.service';
 
 @Component({
   selector: 'app-locked-employee',
@@ -15,7 +15,8 @@ employeesLocked: Users[] = []
 
 constructor(
   private employeeService: EmployeesService,
-  private usersService: UsersService // para insertar la funcionalidad de desbloqueo
+  private usersService: UsersService, // para insertar la funcionalidad de desbloqueo
+  private alertMessageService: AlertMessageService
 ){}
 
 ngOnInit(): void {
@@ -36,7 +37,7 @@ public unlockEmployee(id: string){
   this.usersService.unlockUser(id).subscribe(
     response => {
       this.getEmployeesLocked();
-      this.alertMessage('Atención', `El empleado ${response.names} fue desbloqueado exitosamente`, 'success')
+      this.alertMessageService.alertMessage('Atención', `El empleado ${response.names} fue desbloqueado exitosamente`, 'success')
     }, error => {
       console.error(error)
     }
@@ -44,12 +45,4 @@ public unlockEmployee(id: string){
 }
 
 
- //función para el sweet alert
- public alertMessage(title: string, text: string, icon: SweetAlertIcon): void {
-  Swal.fire({
-    title,
-    text,
-    icon,
-  });
-}
 }

@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { UsersService } from '../../services/users.service';
 import { Users } from '../../interfaces/users.interface';
-import Swal, { SweetAlertIcon } from 'sweetalert2';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { UsersFormComponent } from '../users-form/users-form.component';
+import { AlertMessageService } from 'src/app/shared/services/alert-message.service';
 
 @Component({
   selector: 'app-active-user',
@@ -14,6 +16,8 @@ export class ActiveUsersComponent implements OnInit {
 
   constructor(
     private usersService: UsersService,
+    private dialogRef: MatDialog,
+    private alertMessageService: AlertMessageService
   ){}
 
   ngOnInit(){
@@ -32,21 +36,22 @@ export class ActiveUsersComponent implements OnInit {
   public blockUser(id: string){
     this.usersService.blockUser(id).subscribe(
       res => {
-        this.alertMessage('Atención', 'Usuario bloqueado exitosamente', 'success')
+        this.alertMessageService.alertMessage('Atención', `El usuario ${res.names} fue bloqueado exitosamente`, 'success')
         this.getUsers();
       }, error => {
-        this.alertMessage('Atención', error, 'warning')
+        this.alertMessageService.alertMessage('Atención', error, 'warning')
       }
     )
   }
 
-
-  //función para el sweet alert
-  public alertMessage(title: string, text: string, icon: SweetAlertIcon): void {
-    Swal.fire({
-      title,
-      text,
-      icon,
-    });
+  openDialogEditUser(): void {
+    const dialogRef: MatDialogRef<UsersFormComponent> = this.dialogRef.open(
+      UsersFormComponent,
+      {
+        width: '25%',
+        disableClose: true,
+      }
+    );
   }
+
 }
