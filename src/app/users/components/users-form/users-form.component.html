@@ -1,5 +1,6 @@
-<!-- <main>
+<main>
   <section>
+
     <button class="btn btn-danger mt-2" mat-dialog-close>
       <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-x-circle"
         viewBox="0 0 16 16">
@@ -11,8 +12,9 @@
 
   </section>
   <section>
-    <form [formGroup]="formRegister" (ngSubmit)="onSubmit()">
+    <form [formGroup]="formCreateUser" (ngSubmit)="onSubmit()">
       <div class="container">
+        <h1 class="text-center">Editar</h1>
         <div class="d-flex mb-3">
           <div class="col">
             <label for="documentType" class="form-label">Tipo de documento</label>
@@ -23,7 +25,7 @@
               <option value="PE">PE</option>
             </select>
             <mat-error
-              *ngIf="formRegister.get('doc_type')?.invalid && (formRegister.get('doc_type')?.touched || formRegister.get('doc_type')?.dirty)">
+              *ngIf="formCreateUser.get('doc_type')?.invalid && (formCreateUser.get('doc_type')?.touched || formCreateUser.get('doc_type')?.dirty)">
               Por favor seleccione su tipo de documento
             </mat-error>
           </div>
@@ -32,7 +34,7 @@
             <input type="text" class="form-control" id="identificationNumber"
               placeholder="Digite su número de documento" formControlName="ident_document">
             <mat-error
-              *ngIf="formRegister.get('ident_document')?.invalid && (formRegister.get('ident_document')?.touched || formRegister.get('ident_document')?.dirty)">
+              *ngIf="formCreateUser.get('ident_document')?.invalid && (formCreateUser.get('ident_document')?.touched || formCreateUser.get('ident_document')?.dirty)">
               Por favor ingrese su número de documento
             </mat-error>
           </div>
@@ -42,7 +44,7 @@
           <label for="name" class="form-label">Nombres</label>
           <input type="text" class="form-control" id="name" placeholder="Ingrese su nombre" formControlName="names">
           <mat-error
-            *ngIf="formRegister.get('names')?.invalid && (formRegister.get('names')?.touched || formRegister.get('names')?.dirty)">
+            *ngIf="formCreateUser.get('names')?.invalid && (formCreateUser.get('names')?.touched || formCreateUser.get('names')?.dirty)">
             Por favor ingrese su nombre
           </mat-error>
         </div>
@@ -57,7 +59,7 @@
           <label for="email" class="form-label">Email</label>
           <input type="email" class="form-control" id="email" placeholder="Ingrese su email" formControlName="email">
           <mat-error
-            *ngIf="formRegister.get('email')?.invalid && (formRegister.get('email')?.touched || formRegister.get('email')?.dirty)">
+            *ngIf="formCreateUser.get('email')?.invalid && (formCreateUser.get('email')?.touched || formCreateUser.get('email')?.dirty)">
             El correo debe tener la estructura correcta
           </mat-error>
         </div>
@@ -68,7 +70,7 @@
           <input type="text" class="form-control " id="userName" placeholder="Cree un nombre de usuario"
             formControlName="username">
           <mat-error
-            *ngIf="formRegister.get('username')?.invalid && (formRegister.get('username')?.touched || formRegister.get('username')?.dirty)">
+            *ngIf="formCreateUser.get('username')?.invalid && (formCreateUser.get('username')?.touched || formCreateUser.get('username')?.dirty)">
             Por favor cree un nombre de usuario
           </mat-error>
         </div>
@@ -78,7 +80,7 @@
           <input type="password" class="form-control" id="password" placeholder="Cree una contraseña"
             formControlName="password">
           <mat-error
-            *ngIf="formRegister.get('password')?.invalid && (formRegister.get('password')?.touched || formRegister.get('password')?.dirty)">
+            *ngIf="formCreateUser.get('password')?.invalid && (formCreateUser.get('password')?.touched || formCreateUser.get('password')?.dirty)">
             La contraseña es requerida y debe tener al menos 6 caracteres.
           </mat-error>
         </div>
@@ -96,14 +98,14 @@
 
       </div>
       <div class="text-center">
-        <button type="submit" class="btn btn-primary me-2" [disabled]="formRegister.invalid"><span
+        <button type="submit" class="btn btn-primary me-2" [disabled]="formCreateUser.invalid"><span
             class="material-symbols-outlined pe-1 align-text-bottom fs-5">
             how_to_reg
-          </span>Crear usuario</button>
+          </span>Editar</button>
       </div>
 
 
 
     </form>
   </section>
-</main> -->
+</main>

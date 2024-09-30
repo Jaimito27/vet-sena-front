@@ -48,14 +48,14 @@ export class RegisterComponent implements OnInit{
           } else if (res.status === 201) {
             this.alertMessageService.alertMessage('Atención', res.message, 'success')
             this.formRegister.reset();
+          }else {
+            this.alertMessageService.alertMessage('Error', 'El formulario no es válido', 'error')
           }
         },
         (error) => {
-          console.error(error);
+          this.alertMessageService.alertMessage('Error', error, 'error')
         }
       );
-    } else {
-      console.error('El formulario no es válido');
     }
   }
 

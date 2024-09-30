@@ -1,9 +1,16 @@
-
-.btn-danger{
+.btn-danger {
   border-radius: 50px;
   padding: 0;
   position: absolute;
   top: 10px; /* Ajusta la distancia desde la parte superior */
   right: 16px; /* Ajusta la distancia desde la derecha */
   z-index: 999;
+}
+
+form {
+  margin: 2rem;
+}
+
+.btn-primary {
+  margin-top: 1rem;
 }

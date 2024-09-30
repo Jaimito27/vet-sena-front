@@ -44,14 +44,23 @@ export class ActiveUsersComponent implements OnInit {
     )
   }
 
-  openDialogEditUser(): void {
+  openDialogEditUser(user: any): void {
     const dialogRef: MatDialogRef<UsersFormComponent> = this.dialogRef.open(
       UsersFormComponent,
       {
-        width: '25%',
+        width: '35%',
         disableClose: true,
+        data: {
+          isEditing: true, // Indica si se está editando
+          userData: user
+        }
       }
     );
+
+dialogRef.componentInstance.userUpdated.subscribe(()=>{ //reciba el evento emitido desde el componente formulario y lo ejecute
+  this.getUsers();
+})
+
   }
 
 }
