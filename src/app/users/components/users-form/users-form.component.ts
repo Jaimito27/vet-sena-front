@@ -16,6 +16,7 @@ import { Users } from '../../interfaces/users.interface';
 })
 export class UsersFormComponent implements OnInit {
   public formCreateUser!: FormGroup;
+  isEditing: boolean = false;
 
   @Output() userUpdated = new EventEmitter<void>(); //emite un evento que al actulizar usuario, el componete que lista los usuarios se actuliza
   constructor(
@@ -30,7 +31,9 @@ export class UsersFormComponent implements OnInit {
   ngOnInit(): void {
     this.formCreateUser = this.formUserService.createForm();
 
-    if (this.data.isEditing) {
+    this.isEditing = this.data.isEditing;
+
+    if (this.isEditing) {
       this.formCreateUser.patchValue(this.data.userData);
     }
   }

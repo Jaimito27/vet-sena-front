@@ -14,7 +14,7 @@
   <section>
     <form [formGroup]="formCreateUser" (ngSubmit)="onSubmit()">
       <div class="container">
-        <h1 class="text-center">Editar</h1>
+        <h1 class="text-center">{{ isEditing ? 'Editar Usuario' : 'Crear Usuario' }}</h1>
         <div class="d-flex mb-3">
           <div class="col">
             <label for="documentType" class="form-label">Tipo de documento</label>
@@ -101,7 +101,7 @@
         <button type="submit" class="btn btn-primary me-2" [disabled]="formCreateUser.invalid"><span
             class="material-symbols-outlined pe-1 align-text-bottom fs-5">
             how_to_reg
-          </span>Editar</button>
+          </span>{{ isEditing ? 'Editar Usuario' : 'Crear Usuario' }}</button>
       </div>
 
 
