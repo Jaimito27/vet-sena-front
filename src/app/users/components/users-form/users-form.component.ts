@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, Inject, OnInit, EventEmitter, Output, Input } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
@@ -18,6 +18,7 @@ export class UsersFormComponent implements OnInit {
   public formCreateUser!: FormGroup;
   isEditing: boolean = false;
 
+  @Input() isFromEmployees: boolean = false; //para verificar si se abre desde el componente de empleados y habilitar el campo de role
   @Output() userUpdated = new EventEmitter<void>(); //emite un evento que al actulizar usuario, el componete que lista los usuarios se actuliza
   constructor(
     private dialogRef: MatDialogRef<UsersFormComponent>,
@@ -26,6 +27,7 @@ export class UsersFormComponent implements OnInit {
     private usersService: UsersService,
     private alertMessageService: AlertMessageService,
     @Inject(MAT_DIALOG_DATA) public data: any //inyectar los datos
+
   ) {}
 
   ngOnInit(): void {
@@ -72,6 +74,7 @@ export class UsersFormComponent implements OnInit {
                 response.message,
                 'success'
               );
+              this.dialogRef.close()
               this.formCreateUser.reset();
             } else {
               this.alertMessageService.alertMessage(

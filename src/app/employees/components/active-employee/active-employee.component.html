@@ -2,10 +2,10 @@
   <article>
     <h1 class="text-center">Empleados activos</h1>
     <div class="container">
-      <h2 class="text-center">Estas son las macotas que tienes registradas</h2>
+      <h2 class="text-center">Estos son los empleados activos</h2>
       <div class="row justify-content-center">
         <div class="col-md-4" *ngFor="let employee of employees">
-          <div class="card mb-3">
+          <div class="card mb-3 tarjeta shadow">
 
             <div class="card-body">
               <h2 class="card-title text-center"><strong>{{employee.names}} {{employee.last_name}}</strong></h2>
@@ -21,7 +21,7 @@
 
 
                 <button class="btn btn-success m-1" matTooltip="Editar" matTooltipPosition="left"
-                  matTooltipClass="edit-tooltip"><span class="material-symbols-outlined fs-5 align-text-bottom">
+                  matTooltipClass="edit-tooltip" (click)="openDialogEditEmployee(employee)"><span class="material-symbols-outlined fs-5 align-text-bottom">
                     edit
                   </span></button>
                 <button class="btn btn-danger m-1" matTooltip="Eliminar" matTooltipPosition="right"

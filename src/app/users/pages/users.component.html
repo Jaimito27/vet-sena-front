@@ -3,19 +3,26 @@
     <div>
       <div class="card-body">
         <h2 class="card-title">¿Que tipo de usuario deseas ver?</h2>
-        <p class="card-text">Regístrala, dando clic en el siguiente botón</p>
       </div>
     </div>
 
-
+    <div class="text-center">
+      <button class="btn btn-primary" (click)="openDialogCreateUser()">
+        <span class="material-symbols-outlined align-text-bottom pe-1 fs-5">
+          person_add
+        </span>Nuevo usuario
+      </button>
+    </div>
     <div class="text-center mt-2">
 
-      <button class="btn btn-warning m-1" (click)="setActiveComponent('blocked')"><span class="material-symbols-outlined align-text-bottom pe-1 fs-5">
-        lock
+      <button class="btn btn-warning m-1" (click)="setActiveComponent('blocked')"><span
+          class="material-symbols-outlined align-text-bottom pe-1 fs-5">
+          lock
         </span>Bloqueados</button>
-      <button class="btn btn-success m-1" (click)="setActiveComponent('active')"><span class="material-symbols-outlined align-text-bottom pe-1 fs-5">
+      <button class="btn btn-success m-1" (click)="setActiveComponent('active')"><span
+          class="material-symbols-outlined align-text-bottom pe-1 fs-5">
           group
-          </span>Activos</button>
+        </span>Activos</button>
     </div>
 
   </div>

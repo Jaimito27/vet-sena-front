@@ -29,6 +29,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   ];
 
   linksAuthAdmin: Navigation[] = [
+    { link: 'petsAdmin', icon: 'pet_supplies', label: 'Mascotas' },
     { link: 'users', icon: 'group', label: 'Usuarios' },
     { link: 'employees', icon: 'badge', label: 'Empleados' },
   ];

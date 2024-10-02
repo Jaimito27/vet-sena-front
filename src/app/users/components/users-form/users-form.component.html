@@ -85,6 +85,19 @@
           </mat-error>
         </div>
 
+        <div class="col" *ngIf="isFromEmployees">
+          <label for="role" class="form-label">Rol</label>
+          <select class="form-select" id="inputGroupSelect01" formControlName="role">
+            <option selected>Seleccione el rol</option>
+            <option value="admin">Administrador</option>
+            <option value="medical">Médico</option>
+          </select>
+          <mat-error
+            *ngIf="formCreateUser.get('role')?.invalid && (formCreateUser.get('role')?.touched || formCreateUser.get('role')?.dirty)">
+            Por favor seleccione un rol válido
+          </mat-error>
+        </div>
+
 
         <div class="name col">
           <label for="phone" class="form-label">Teléfono</label>

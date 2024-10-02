@@ -21,4 +21,6 @@ export class EmployeesService {
   public getEmployeesLocked(): Observable<Users[]>{
     return this.http.get<Users[]>(`${this.API_URL}/users/employee/locked`)
   }
+
+  
 }

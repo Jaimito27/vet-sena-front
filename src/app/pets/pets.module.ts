@@ -5,10 +5,11 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { PetsComponent } from './pages/pets.component';
 import { PetsListComponent } from './components/pets-list/pets-list.component';
 import { RegisterPetComponent } from './components/register-pet/register-pet.component';
+import { PetsAdminComponent } from './components/pets-admin.component';
 
 
 @NgModule({
-  declarations: [PetsComponent, PetsListComponent, RegisterPetComponent],
+  declarations: [PetsComponent, PetsListComponent, RegisterPetComponent, PetsAdminComponent],
   imports: [CommonModule, MatTooltipModule],
   exports:[PetsListComponent, RegisterPetComponent]
 })
