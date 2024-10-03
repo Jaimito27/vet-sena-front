@@ -1,0 +1,34 @@
+<div class="card text-center mx-auto tarjeta">
+  <div class="row p-0 m-0">
+    <div>
+      <div class="card-body">
+        <h2 class="card-title">¿Que tipo de usuario deseas ver?</h2>
+      </div>
+    </div>
+
+    <div class="text-center">
+      <button class="btn btn-primary" >
+        <span class="material-symbols-outlined align-text-bottom pe-1 fs-5">
+          person_add
+        </span>Nuevo usuario
+      </button>
+    </div>
+    <div class="text-center mt-2">
+
+      <button class="btn btn-warning m-1" (click)="setActiveComponent('blocked')"><span
+          class="material-symbols-outlined align-text-bottom pe-1 fs-5">
+          lock
+        </span>Bloqueados</button>
+      <button class="btn btn-success m-1" (click)="setActiveComponent('active')"><span
+          class="material-symbols-outlined align-text-bottom pe-1 fs-5">
+          group
+        </span>Activos</button>
+    </div>
+
+  </div>
+</div>
+
+
+
+<app-pets-admin-locked *ngIf="activeComponent === 'blocked'"></app-pets-admin-locked>
+<app-pets-admin-active *ngIf="activeComponent === 'active'"></app-pets-admin-active>

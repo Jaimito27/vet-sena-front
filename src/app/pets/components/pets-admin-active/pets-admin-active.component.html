@@ -1,0 +1,55 @@
+<div class="container">
+  <h2>Estas son las macotas que tienes registradas</h2>
+  <div class="row justify-content-center">
+    <div class="col-md-4" *ngFor="let pet of pets">
+      <div class="card mb-3 tarjeta shadow">
+        <div class="img">
+          <img src="" class="card-img-top">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title text-center"><strong>{{pet.name}}</strong></h2>
+          <p class="card-text"><strong>Edad: </strong>{{pet.age}}</p>
+          <p class="card-text"><strong>Tipo: </strong>{{pet.type}}</p>
+          <p class="card-text"><strong>Raza: </strong>{{pet.breed}}</p>
+          <p class="card-text"><strong>Dueño: </strong>{{pet.user.names}}</p>
+
+
+
+          <p class="card-text">
+            <strong>Peligroso: </strong>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 64 64"
+              *ngIf="pet.dangerous; else noPeligroso">
+              <rect width="100%" height="100%" fill="#ff2323" rx="10" ry="10" />
+              <line x1="20" y1="20" x2="44" y2="44" stroke="#FFFFFF" stroke-width="6" />
+              <line x1="20" y1="44" x2="44" y2="20" stroke="#FFFFFF" stroke-width="6" />
+            </svg>
+
+            <ng-template #noPeligroso>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 64 64">
+                <rect width="100%" height="100%" fill="#198754" rx="10" ry="10" />
+                <path d="M16 32l11 11 24-24" fill="none" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" />
+              </svg>
+
+            </ng-template>
+          </p>
+
+          <div *ngIf="showButtons" class="text-center">
+
+
+            <button class="btn btn-success m-1" matTooltip="Editar" matTooltipPosition="left"
+              matTooltipClass="edit-tooltip"><span class="material-symbols-outlined fs-5 align-text-bottom">
+                edit
+              </span></button>
+            <button class="btn btn-danger m-1" matTooltip="Eliminar" matTooltipPosition="right"
+              matTooltipClass="delete-tooltip"><span class="material-symbols-outlined fs-5 align-text-bottom">
+                delete
+              </span></button>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

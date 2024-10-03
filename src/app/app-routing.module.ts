@@ -3,11 +3,12 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { Error404PageComponent } from './shared/pages/404/error404-page/error404-page.component';
 import { SheduleComponent } from './shedule/pages/shedule/shedule.component';
-import { PetsComponent } from './pets/pages/pets.component';
+import { PetsComponent } from './pets/pages/pets/pets.component';
 import { ProfileComponent } from './profile/pages/profile/profile.component';
 import { UsersComponent } from './users/pages/users.component';
 import { EmployeesComponent } from './employees/pages/employees/employees.component';
 import { AuthGuard } from './auth/guards/auth.guard';
+import { PetsAdminComponent } from './pets/pages/pets-admin/pets-admin.component';
 
 
 const routes: Routes = [
@@ -23,13 +24,13 @@ const routes: Routes = [
     path: 'shedule',
     component: SheduleComponent,
     canActivate: [AuthGuard],
-    data: {roles: ['user', 'admin']}
+    data: {roles: ['user']}
   },
   {
     path: 'pets',
     component: PetsComponent,
     canActivate: [AuthGuard],
-    data: {roles: ['user', 'admin']}
+    data: {roles: ['user']}
   },
   {
     path: 'profile',
@@ -41,13 +42,19 @@ const routes: Routes = [
     path: 'users',
     component: UsersComponent,
     canActivate: [AuthGuard],
-    data: {roles: ['user', 'admin']}
+    data: {roles: ['admin']}
   },
   {
     path: 'employees',
     component: EmployeesComponent,
     canActivate: [AuthGuard],
-    data: {roles: ['user', 'admin']}
+    data: {roles: ['admin']}
+  },
+  {
+    path: 'pets-admin',
+    component: PetsAdminComponent,
+    canActivate: [AuthGuard],
+    data: {roles: ['admin']}
   },
   {
     path: '',

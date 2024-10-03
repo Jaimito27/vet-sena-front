@@ -29,7 +29,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   ];
 
   linksAuthAdmin: Navigation[] = [
-    { link: 'petsAdmin', icon: 'pet_supplies', label: 'Mascotas' },
+    { link: 'pets-admin', icon: 'pet_supplies', label: 'Mascotas' },
     { link: 'users', icon: 'group', label: 'Usuarios' },
     { link: 'employees', icon: 'badge', label: 'Empleados' },
   ];
@@ -64,7 +64,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
       const role = this.authService.getRole(); //obtiene el rol del usuario
 
       if (role === 'admin') {
-        this.links = [...this.links, ...this.linksAuthAdmin]; //si el rol es admin agrega los enlaces de administrador
+        this.links = [...this.linksDefault, ...this.linksAuthAdmin]; //si el rol es admin agrega los enlaces de administrador
       }
     }
   }
