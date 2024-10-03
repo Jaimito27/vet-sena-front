@@ -1,0 +1,23 @@
+@import '../../../../styles.scss';
+
+
+::ng-deep .unlock-tooltip {
+  --mdc-plain-tooltip-container-color: #ffc107;
+}
+
+.tarjeta {
+  max-height: 150px; /* Cambiado a max-height */
+  overflow: hidden;
+  transition: max-height 0.3s ease; /* Transición a max-height */
+}
+
+.tarjeta:hover {
+  max-height: 500px; /* Un valor alto que permita mostrar el contenido */
+}
+
+
+button{
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+}

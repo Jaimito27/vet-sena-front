@@ -1,6 +1,7 @@
 import { Users } from "src/app/users/interfaces/users.interface";
 
 export interface Pet {
+  id?: string
   name: string;
   age: number;
   type: string;
