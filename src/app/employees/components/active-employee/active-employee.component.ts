@@ -60,7 +60,7 @@ public openDialogEditEmployee(employee: any){
 public blockEmployee(id: string){
   this.userService.blockUser(id).subscribe(
     res => {
-      this.alertMessageService.alertMessage('Atención', `El empleado ${res.names} fue bloqueado exitosamente`, 'success')
+      this.alertMessageService.alertMessage('Atención', `El empleado ${res.names} fue eliminado exitosamente`, 'success')
       this.getEmployees();
     }, err => {
       this.alertMessageService.alertMessage('Error', err, 'warning')

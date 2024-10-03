@@ -1,6 +1,8 @@
 <main class="container">
   <article>
     <h1 class="text-center">Empleados bloqueados</h1>
+    <p class="p-2 text-warning-emphasis bg-warning-subtle border border-warning-subtle rounded-3 text-center"
+      *ngIf="employeesLocked.length === 0">No tienes empleados bloqueados.</p>
     <div class="container">
       <h2 class="text-center">Estas son las macotas que tienes registradas</h2>
       <div class="row justify-content-center">
@@ -8,7 +10,8 @@
           <div class="card mb-3 tarjeta shadow">
 
             <div class="card-body">
-              <h2 class="card-title text-center"><strong>{{employeeLocked.names}} {{employeeLocked.last_name}}</strong></h2>
+              <h2 class="card-title text-center"><strong>{{employeeLocked.names}} {{employeeLocked.last_name}}</strong>
+              </h2>
 
               <p class="card-text"><strong>Tipo de documento: </strong>{{employeeLocked.doc_type}}</p>
               <p class="card-text"><strong>Telefono: </strong>{{employeeLocked.phone}}</p>
@@ -21,14 +24,11 @@
 
 
 
-                  <button class="btn btn-warning m-1"
-                  matTooltip="Desbloquear"
-                  matTooltipPosition="left"
-                  matTooltipClass="unlock-tooltip"
-                  (click)="unlockEmployee(employeeLocked.id!)"
-                  ><span class="material-symbols-outlined fs-5 align-text-bottom">
+                <button class="btn btn-warning m-1" matTooltip="Desbloquear" matTooltipPosition="left"
+                  matTooltipClass="unlock-tooltip" (click)="unlockEmployee(employeeLocked.id!)"><span
+                    class="material-symbols-outlined fs-5 align-text-bottom">
                     lock_open_right
-                    </span></button>
+                  </span></button>
 
               </div>
 

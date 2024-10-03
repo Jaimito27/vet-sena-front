@@ -36,7 +36,7 @@ export class ActiveUsersComponent implements OnInit {
   public blockUser(id: string){
     this.usersService.blockUser(id).subscribe(
       res => {
-        this.alertMessageService.alertMessage('Atención', `El usuario ${res.names} fue bloqueado exitosamente`, 'success')
+        this.alertMessageService.alertMessage('Atención', `El usuario ${res.names} fue eliminado exitosamente`, 'success')
         this.getUsers();
       }, error => {
         this.alertMessageService.alertMessage('Atención', error, 'warning')

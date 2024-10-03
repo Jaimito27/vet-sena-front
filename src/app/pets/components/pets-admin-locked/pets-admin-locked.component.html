@@ -1,12 +1,12 @@
 <main class="container">
   <article>
-    <h1 class="text-center">Usuaurios bloqueados</h1>
+    <h1 class="text-center">Mascotas bloqueadas</h1>
     <div class="container">
 
+      <p class="p-2 text-warning-emphasis bg-warning-subtle border border-warning-subtle rounded-3 text-center" *ngIf="petsLocked.length === 0">No hay mascotas bloqueadas.</p>
       <div class="row justify-content-center">
         <div class="col-md-4" *ngFor="let petLocked of petsLocked">
           <div class="card mb-3 tarjeta shadow">
-
             <div class="card-body">
               <h2 class="card-title text-center"><strong>{{petLocked.name}}</strong></h2>
               <p class="card-text"><strong>Edad: </strong>{{petLocked.age}}</p>
@@ -35,7 +35,7 @@
 
 
                 <button class="btn btn-warning m-1" matTooltip="Desbloquear" matTooltipPosition="left"
-                  matTooltipClass="unlock-tooltip"><span
+                  matTooltipClass="unlock-tooltip" (click)="unlockPets(petLocked.id!)"><span
                     class="material-symbols-outlined fs-5 align-text-bottom">
                     lock_open_right
                   </span></button>

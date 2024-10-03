@@ -26,4 +26,8 @@ export class PetsService {
   public blockPet(id: string): Observable<Pet>{
     return this.http.patch<Pet>(`${this.API_URL}/pets/delete/${id}`, {})
   }
+
+  public unlockPet(id: string): Observable<Pet>{
+    return this.http.patch<Pet>(`${this.API_URL}/pets/unlock/${id}`, {})
+  }
 }
